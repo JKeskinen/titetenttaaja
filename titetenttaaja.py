@@ -1,6 +1,6 @@
-import random
 import json
 import os
+import random
 
 # Värikoodit
 RED = "\033[91m"
@@ -11,66 +11,136 @@ RESET = "\033[0m"
 
 TENTTIKANSIO = "tentit"
 
+
+def render_progress(answered, total, score, bar_length=30):
+    ratio = answered / total if total else 0
+    filled = int(bar_length * ratio)
+    filled_part = "|" * filled
+    empty_part = "." * (bar_length - filled)
+
+    bar = "["
+    if filled_part:
+        bar += f"{GREEN}{filled_part}{RESET}"
+    if empty_part:
+        bar += f"{RED}{empty_part}{RESET}"
+    bar += "]"
+
+    percent = int(ratio * 100)
+    return f"{bar} {percent:>3}% suoritettu\n{score}/{total} oikein"
+
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 # Etsii tenttikansiosta json-tiedostot.
 def hae_tentit():
     return [f for f in os.listdir(TENTTIKANSIO) if f.endswith(".json")]
+
 
 # Lukee kysymykset jsonista
 def lue_kysymykset(tiedosto):
     with open(os.path.join(TENTTIKANSIO, tiedosto), "r", encoding="utf-8") as f:
         return json.load(f)
 
+
 # Tentin suoritus
 def suorita_tentti(questions):
-    # Satunnaistaa vaihtoehdot ja oikean vastauksen indeksin.
-    for q in questions:
-        correct = q["options"][0]
-        random.shuffle(q["options"])
-        q["answer"] = q["options"].index(correct)
+    valid_questions = []
+    invalid_questions = []
 
-    score = 0
-    user_answers = []
+    for q in questions:
+        options = list(q.get("options", []))
+        correct = q.get("correct")
+        if not options or correct not in options:
+            invalid_questions.append(q.get("question", "(tuntematon kysymys)"))
+            continue
+        valid_questions.append(
+            {
+                "question": q["question"],
+                "options": options,
+                "correct": correct,
+            }
+        )
+
+    if invalid_questions:
+        print(f"{YELLOW}Huom: seuraavilta kysymyksiltä puuttui kelvollinen oikea vastaus:{RESET}")
+        for name in invalid_questions:
+            print(f"- {name}")
+
+    if not valid_questions:
+        print(f"{RED}Tentistä puuttuu kelvollisia kysymyksiä.{RESET}")
+        return
 
     while True:
         try:
-            # kysytään käyttäjältä tentattavien kysymysten määrä.
-            question_amount = int(input(f"Montako kysymystä kysytään? (kysymyksiä yht. {len(questions)}): "))
-            if 1 <= question_amount <= len(questions):
+            question_amount = int(
+                input(
+                    f"Montako kysymystä kysytään? (kysymyksiä yht. {len(valid_questions)}): "
+                )
+            )
+            if 1 <= question_amount <= len(valid_questions):
                 break
-            else:
-                print(f"{RED}Annettu numero ei ole kysymysten määrän sisällä.{RESET}")
+            print(f"{RED}Annettu numero ei ole kysymysten määrän sisällä.{RESET}")
         except ValueError:
             print(f"{RED}Syöte ei ollut numero.{RESET}")
 
-    quiz_questions = random.sample(questions, k=question_amount)
+    quiz_questions = random.sample(valid_questions, k=question_amount)
 
-    for i, q in enumerate(quiz_questions, 1):
-        print(f"\nKysymys {i}/{question_amount}: {q['question']}")
-        for idx, option in enumerate(q["options"]):
-            print(f"{idx + 1}. {option}")
+    score = 0
+    answered = 0
+    user_answers = []
 
+    for index, q in enumerate(quiz_questions, 1):
+        clear_screen()
+        print("=" * 50)
+        print("   Tietoliikennetenttaaja".center(50))
+        print("=" * 50)
+        print(render_progress(answered, question_amount, score))
+
+        options = q["options"][:]
+        random.shuffle(options)
+
+        try:
+            answer_index = options.index(q["correct"])
+        except ValueError:
+            print(f"{RED}Kysymyksen oikeaa vastausta ei löytynyt vaihtoehdoista.{RESET}")
+            continue
+
+        print(f"\nKysymys {index}/{question_amount}: {q['question']}")
+        for opt_index, option in enumerate(options, 1):
+            print(f"{opt_index}. {option}")
+
+        max_option = len(options)
         while True:
             try:
-                user_input = int(input("Valitse vaihtoehto (1-4): "))
-                if 1 <= user_input <= 4:
+                user_input = int(input(f"Valitse vaihtoehto (1-{max_option}): "))
+                if 1 <= user_input <= max_option:
                     break
-                else:
-                    print("Anna luku välillä 1–4")
+                print(f"Anna luku välillä 1-{max_option}")
             except ValueError:
-                print(f"{RED}Numero ei ollut väliltä 1–4{RESET}")
+                print("Anna kokonaisluku")
 
-        if user_input - 1 == q["answer"]:
+        if user_input - 1 == answer_index:
             print(f"{GREEN}Oikein!{RESET}")
             score += 1
-            user_answers.append((q["question"], True, q["options"][q["answer"]]))
+            user_answers.append((q["question"], True, options[answer_index]))
         else:
-            print(f"{RED}Väärin! Oikea vastaus: {q['options'][q['answer']]}{RESET}")
-            user_answers.append((q["question"], False, q["options"][q["answer"]]))
+            correct_option = options[answer_index]
+            print(f"{RED}Väärin! Oikea vastaus: {correct_option}{RESET}")
+            user_answers.append((q["question"], False, correct_option))
 
-    print(f"\n{YELLOW}=== Tentti valmis! ==={RESET}")
-    print(f"Sait oikein {score}/{len(quiz_questions)} kysymystä.\n")
+        answered += 1
+        print(render_progress(answered, question_amount, score))
 
-    print("Yhteenvedon tulokset:")
+    clear_screen()
+    print("=" * 50)
+    print("   Tietoliikennetenttaaja".center(50))
+    print("=" * 50)
+    print(render_progress(question_amount, question_amount, score))
+    print(f"\n{YELLOW}=== Yhteenveto ==={RESET}")
+    print(f"Oikein vastattuja: {score}/{question_amount}")
+    print("\nYhteenvedon tulokset:")
     for question, correct, answer in user_answers:
         status = f"{GREEN}Oikein{RESET}" if correct else f"{RED}Väärin{RESET}"
         print(f"- {question} → {status} (Oikea vastaus: {answer})")
