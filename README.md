@@ -3,8 +3,14 @@
 Komentorivipohjainen Python-tenttijärjestelmä, joka lukee kysymykset JSON-tiedostosta ja antaa monivalintakysymyksiä.
 
 ## Käyttö
-1. Suorita 'python3 titetenttaaja.py'(Windows) tai 'python titetenttaaja.py'(Gnu/Linux)
-2. valitse tentti ja vastaa kysymyksiin.
+### CLI-versio
+1. Suorita `python titetenttaaja.py` (Windows) tai `python3 titetenttaaja.py` (Linux/macOS).
+2. Valitse tentti ja vastaa kysymyksiin.
+
+### Selainversio
+1. Käynnistä paikallinen palvelin projektin juuresta. Avaa Powershell ja kirjoita komento `python -m http.server`.
+2. Avaa selain osoitteeseen `http://localhost:8000/WEB/`.
+3. Valitse tentti, tarvittaessa rajaa kysymysten määrä ja aloita testi.
 
 ## Kontributoi
 

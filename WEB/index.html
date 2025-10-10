@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiteTenttaaja Web</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>TiteTenttaaja</h1>
+        <p>Valitse tentti ja testaa tietosi monivalintakysymyksillä.</p>
+      </header>
+
+      <section class="controls">
+        <div class="controls-row">
+          <div class="control-group">
+            <label for="exam-select">Tentti</label>
+            <select id="exam-select"></select>
+          </div>
+          <div class="control-group control-group--compact">
+            <label for="question-count">Kysymysten määrä</label>
+            <input
+              id="question-count"
+              type="number"
+              min="1"
+              inputmode="numeric"
+              placeholder="Kaikki"
+            />
+          </div>
+        </div>
+        <button id="start-btn" class="controls-action">Aloita tentti</button>
+        <span id="status" role="status" aria-live="polite"></span>
+      </section>
+
+      <section id="quiz" class="quiz hidden" aria-live="polite">
+        <header class="quiz-header">
+          <h2 id="quiz-title"></h2>
+          <div class="progress">
+            <span id="progress-label"></span>
+            <span id="score-label"></span>
+          </div>
+        </header>
+
+        <article id="question-block" class="question-block">
+          <h3 id="question-text"></h3>
+          <ul id="options-list" class="options"></ul>
+        </article>
+
+        <footer class="quiz-actions">
+          <button id="next-btn" class="hidden">Seuraava</button>
+        </footer>
+      </section>
+
+      <section id="results" class="results hidden">
+        <h2>Tulokset</h2>
+        <p id="results-summary"></p>
+        <button id="restart-btn">Aloita alusta</button>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
