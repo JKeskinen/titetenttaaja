@@ -12,6 +12,9 @@ Tentit ovat JSON-tiedostoina projektin juuressa kansiossa nimeltä 'tentit'. voi
 
 JSON-tiedoston rakenne:
 ```json
+{
+  "TITLE": "Tentin aihe",
+  "questions": [
   {
     "question": "Kysymys",
     "options": [
