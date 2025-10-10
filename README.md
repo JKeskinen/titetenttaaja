@@ -12,9 +12,17 @@ Tentit ovat JSON-tiedostoina projektin juuressa kansiossa nimeltä 'tentit'. voi
 
 JSON-tiedoston rakenne:
 ```json
-[
-	{"question": "Kysymys",
-	 "options": ["Oikea vastaus", "Valinta2", "Valinta3", "Valinta4"]}
-]
+{
+  "TITLE": "Tentin aihe",
+  "questions": [
+  {
+    "question": "Kysymys",
+    "options": [
+      "Optio 1",
+      "Optio 2",
+      "Optio 3",
+      "Optio 4"
+    ],
+    "correct": "Optio 1"
+  },
 ```
-Ensimmäinen valinta on aina oikea vastaus. Ohjelma suorittaa kysymysten sekoituksen.
