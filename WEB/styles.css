@@ -1,0 +1,254 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f5f7fa 0%, #e4ecf5 100%);
+  color: #1a1a1a;
+}
+
+.app {
+  max-width: min(960px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+}
+
+.hero p {
+  margin: 0;
+  color: #4a5568;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1rem 1.25rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(18, 85, 239, 0.12);
+  margin-bottom: 2rem;
+}
+
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.control-group {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control-group--compact input {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+label {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+select,
+button,
+input[type="number"] {
+  font: inherit;
+  border-radius: 8px;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  padding: 0.6rem 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+select:focus-visible,
+button:focus-visible,
+input[type="number"]:focus-visible {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+button {
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  padding-inline: 1.5rem;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(99, 102, 241, 0.22);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+input[type="number"] {
+  width: 100%;
+}
+
+.control-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.control-group--compact .control-hint {
+  display: none;
+}
+
+.controls-action {
+  align-self: flex-start;
+  min-width: 180px;
+}
+
+#status {
+  display: block;
+  color: #2d3748;
+  min-height: 1.2em;
+}
+
+.quiz {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+}
+
+.quiz-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-header h2 {
+  margin: 0;
+}
+
+.progress {
+  display: flex;
+  gap: 1rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.question-block h3 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.option {
+  width: 100%;
+  text-align: left;
+  background: rgba(99, 102, 241, 0.08);
+  color: #1f2937;
+  border: 1px solid transparent;
+  padding: 0.9rem 1rem;
+}
+
+.option:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.18);
+}
+
+.option.correct {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #065f46;
+}
+
+.option.incorrect {
+  background: rgba(248, 113, 113, 0.18);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #7f1d1d;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.results {
+  margin-top: 2.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+}
+
+.results h2 {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls-action {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .quiz {
+    padding: 1.5rem;
+  }
+}
