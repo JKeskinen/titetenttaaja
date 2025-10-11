@@ -1,0 +1,1005 @@
+{
+  "TITLE": "Ohjelmointi",
+  "questions": [
+    {
+      "question": "Mikä Pythonin sisäänrakennettu funktio palauttaa listan pituuden?",
+      "options": [
+        "size()",
+        "length()",
+        "len()",
+        "count()"
+      ],
+      "correct": "len()"
+    },
+    {
+      "question": "Mitä tulostuu komennolla print(2 * '3')?",
+      "options": [
+        "6",
+        "33",
+        "23",
+        "Virhe"
+      ],
+      "correct": "33"
+    },
+    {
+      "question": "Millä avainsanalla määritellään Python-funktio?",
+      "options": [
+        "func",
+        "def",
+        "lambda",
+        "function"
+      ],
+      "correct": "def"
+    },
+    {
+      "question": "Kuinka tuot moduulin math käyttöön Pythonissa?",
+      "options": [
+        "include math",
+        "import math",
+        "using math",
+        "require('math')"
+      ],
+      "correct": "import math"
+    },
+    {
+      "question": "Mikä seuraavista on muuttumaton tietorakenne Pythonissa?",
+      "options": [
+        "list",
+        "tuple",
+        "set",
+        "dict"
+      ],
+      "correct": "tuple"
+    },
+    {
+      "question": "Mitä range(5) tuottaa?",
+      "options": [
+        "Luvut 1-5",
+        "Iteroitavan, jossa on luvut 0-4",
+        "Listan, jossa on luvut 0-5",
+        "Virheilmoituksen"
+      ],
+      "correct": "Iteroitavan, jossa on luvut 0-4"
+    },
+    {
+      "question": "Millä tavalla avaat tiedoston data.txt lukutilassa?",
+      "options": [
+        "open('data.txt')",
+        "open('data.txt', 'r')",
+        "file('data.txt', 'r')",
+        "read('data.txt')"
+      ],
+      "correct": "open('data.txt', 'r')"
+    },
+    {
+      "question": "Mitä bool([]) palauttaa?",
+      "options": [
+        "True",
+        "False",
+        "[]",
+        "Virheen"
+      ],
+      "correct": "False"
+    },
+    {
+      "question": "Mikä seuraavista on listan viipalointi?",
+      "options": [
+        "numbers(1,4)",
+        "numbers[1:4]",
+        "numbers{1:4}",
+        "slice(numbers, 1, 4)"
+      ],
+      "correct": "numbers[1:4]"
+    },
+    {
+      "question": "Millä rakenteella kaappaat poikkeuksen Pythonissa?",
+      "options": [
+        "catch/handle",
+        "try/except",
+        "try/catch",
+        "handle/except"
+      ],
+      "correct": "try/except"
+    },
+    {
+      "question": "Millä metodilla lisätään alkio listan loppuun?",
+      "options": [
+        "add",
+        "push",
+        "append",
+        "insert"
+      ],
+      "correct": "append"
+    },
+    {
+      "question": "Mitä dict.keys() palauttaa?",
+      "options": [
+        "Listan arvoista",
+        "Iteroitavan sanakirjan avaimista",
+        "Yhden avaimen",
+        "Avainten määrän"
+      ],
+      "correct": "Iteroitavan sanakirjan avaimista"
+    },
+    {
+      "question": "Mikä operaattori vertaa arvoja yhtäsiksi Pythonissa?",
+      "options": [
+        "=",
+        "==",
+        "===",
+        "is"
+      ],
+      "correct": "=="
+    },
+    {
+      "question": "Mitä if __name__ == \"__main__\": tarkistaa?",
+      "options": [
+        "Että tiedosto on tuotu moduuliksi",
+        "Että muuttuja main on olemassa",
+        "Että tiedostoa ajetaan suoraan pääohjelmana",
+        "Että funktio main suoritetaan automaattisesti"
+      ],
+      "correct": "Että tiedostoa ajetaan suoraan pääohjelmana"
+    },
+    {
+      "question": "Millä funktiolla saat indeksin ja arvon listaa kiertäessä?",
+      "options": [
+        "range",
+        "enumerate",
+        "index",
+        "zip"
+      ],
+      "correct": "enumerate"
+    },
+    {
+      "question": "Mikä seuraavista luo set-komprehensionin?",
+      "options": [
+        "[x for x in data]",
+        "{x: x for x in data}",
+        "{x for x in data}",
+        "(x for x in data)"
+      ],
+      "correct": "{x for x in data}"
+    },
+    {
+      "question": "Millä avainsanalla Python-funktio voi palauttaa generaattorin?",
+      "options": [
+        "generate",
+        "yield",
+        "return",
+        "async"
+      ],
+      "correct": "yield"
+    },
+    {
+      "question": "Miten luot tyhjän setin Pythonissa?",
+      "options": [
+        "{}",
+        "[]",
+        "set()",
+        "()"
+      ],
+      "correct": "set()"
+    },
+    {
+      "question": "Mitä list(map(len, words)) tekee?",
+      "options": [
+        "Palauttaa listan alkuperäisistä sanoista",
+        "Palauttaa listan, jonka pituus on len",
+        "Palauttaa listan, jossa on jokaisen sanan pituus",
+        "Muokkaa words-listaa paikoillaan"
+      ],
+      "correct": "Palauttaa listan, jossa on jokaisen sanan pituus"
+    },
+    {
+      "question": "Mikä seuraavista pitää paikkansa arvosta None?",
+      "options": [
+        "Se on sama kuin tyhjä merkkijono",
+        "Se tarkoittaa arvoa 0",
+        "Se on Pythonin ainoa None-arvo ja sitä verrataan identiteetillä",
+        "Se on sama kuin False"
+      ],
+      "correct": "Se on Pythonin ainoa None-arvo ja sitä verrataan identiteetillä"
+    },
+    {
+      "question": "Miten yhdistät kaksi listaa nimeltä list1 ja list2?",
+      "options": [
+        "list1.append(list2)",
+        "list1 + list2",
+        "list1.add(list2)",
+        "concat(list1, list2)"
+      ],
+      "correct": "list1 + list2"
+    },
+    {
+      "question": "Mitä list(range(3)) palauttaa?",
+      "options": [
+        "[1, 2, 3]",
+        "[0, 1, 2]",
+        "[0, 1, 2, 3]",
+        "Virheen"
+      ],
+      "correct": "[0, 1, 2]"
+    },
+    {
+      "question": "Millä metodilla poistat ensimmäisen esiintymän tietystä arvosta listasta?",
+      "options": [
+        "delete",
+        "pop",
+        "remove",
+        "discard"
+      ],
+      "correct": "remove"
+    },
+    {
+      "question": "Mikä seuraavista on f-string Pythonissa?",
+      "options": [
+        "\"Hello {}\".format(name)",
+        "\"Hello %s\" % name",
+        "\"Hello \" + name",
+        "f\"Hello {name}\""
+      ],
+      "correct": "f\"Hello {name}\""
+    },
+    {
+      "question": "Mitä abs(-5) palauttaa?",
+      "options": [
+        "-5",
+        "5",
+        "Virheen",
+        "None"
+      ],
+      "correct": "5"
+    },
+    {
+      "question": "Mitä lause from math import sqrt as s mahdollistaa?",
+      "options": [
+        "Math-moduulin poistamisen käytöstä",
+        "Sqrt-funktion korvaamisen toisella funktiolla automaattisesti",
+        "Sqrt-funktion käytön nimen s avulla",
+        "Et saa käyttää sqrt-funktiota lainkaan"
+      ],
+      "correct": "Sqrt-funktion käytön nimen s avulla"
+    },
+    {
+      "question": "Mikä seuraavista on listakomprehensio, joka tuottaa parit (x, x**2)?",
+      "options": [
+        "[(x, x**2) : range(3)]",
+        "{(x, x**2) for x in range(3)}",
+        "[(x, x**2) for x in range(3)]",
+        "[x, x**2 for x in range(3)]"
+      ],
+      "correct": "[(x, x**2) for x in range(3)]"
+    },
+    {
+      "question": "Mitä any([False, True, False]) palauttaa?",
+      "options": [
+        "False",
+        "True",
+        "[False, True, False]",
+        "Virheen"
+      ],
+      "correct": "True"
+    },
+    {
+      "question": "Miten tarkistat, onko sanakirjassa avain 'id'?",
+      "options": [
+        "data.has('id')",
+        "data['id']?",
+        "'id' in data",
+        "data.keys('id')"
+      ],
+      "correct": "'id' in data"
+    },
+    {
+      "question": "Mitä sum([1, 2, 3]) palauttaa?",
+      "options": [
+        "5",
+        "6",
+        "[1, 2, 3]",
+        "Virheen"
+      ],
+      "correct": "6"
+    },
+    {
+      "question": "Mikä seuraavista tekee listasta matalan kopion?",
+      "options": [
+        "copy = items",
+        "copy = items[:]",
+        "copy = items.append([])",
+        "copy = set(items)"
+      ],
+      "correct": "copy = items[:]"
+    },
+    {
+      "question": "Mitä zip([1, 2], [3, 4]) tuottaa?",
+      "options": [
+        "Listan [1, 2, 3, 4]",
+        "Iteraattorin, joka tuottaa parit (1, 3) ja (2, 4)",
+        "Yhden tuplen (1, 2, 3, 4)",
+        "Virheilmoituksen"
+      ],
+      "correct": "Iteraattorin, joka tuottaa parit (1, 3) ja (2, 4)"
+    },
+    {
+      "question": "Mikä operaattori toistaa listan sisällön Pythonissa?",
+      "options": [
+        "+",
+        "*",
+        "%",
+        "^"
+      ],
+      "correct": "*"
+    },
+    {
+      "question": "Mitä sorted({3, 1, 2}) palauttaa?",
+      "options": [
+        "[3, 1, 2]",
+        "[1, 2, 3]",
+        "{1, 2, 3}",
+        "Virheen"
+      ],
+      "correct": "[1, 2, 3]"
+    },
+    {
+      "question": "Mitä lambda x: x + 1 luo?",
+      "options": [
+        "Luokan nimeltä lambda",
+        "Anonyymin funktion, joka kasvattaa x:n yhdellä",
+        "Listan",
+        "Koristelu-funktion"
+      ],
+      "correct": "Anonyymin funktion, joka kasvattaa x:n yhdellä"
+    },
+    {
+      "question": "Missä metodissa Python-luokan kentät tyypillisesti alustetaan?",
+      "options": [
+        "__str__",
+        "__init__",
+        "__repr__",
+        "setup"
+      ],
+      "correct": "__init__"
+    },
+    {
+      "question": "Mikä on yksinkertainen tapa määritellä tyhjä luokka nimeltä MyClass?",
+      "options": [
+        "class MyClass: pass",
+        "class MyClass() {}",
+        "def MyClass(): pass",
+        "class MyClass = object()"
+      ],
+      "correct": "class MyClass: pass"
+    },
+    {
+      "question": "Mitä isinstance(5, int) palauttaa?",
+      "options": [
+        "True",
+        "False",
+        "Virheen",
+        "None"
+      ],
+      "correct": "True"
+    },
+    {
+      "question": "Mikä Python-moduuli tarjoaa JSON-käsittelyn?",
+      "options": [
+        "pickle",
+        "json",
+        "csv",
+        "marshal"
+      ],
+      "correct": "json"
+    },
+    {
+      "question": "Mikä listakomprehensio palauttaa listasta nums vain parilliset luvut?",
+      "options": [
+        "[x for x in nums where x % 2 == 0]",
+        "[x % 2 == 0 for x in nums]",
+        "[x for x in nums if x % 2 == 0]",
+        "filter(nums, even)"
+      ],
+      "correct": "[x for x in nums if x % 2 == 0]"
+    },
+    {
+      "question": "Mikä on Javassa pääohjelman aloitusmetodin allekirjoitus?",
+      "options": [
+        "public void main(String[] args)",
+        "public static void main(String[] args)",
+        "public static void Main()",
+        "static void main()"
+      ],
+      "correct": "public static void main(String[] args)"
+    },
+    {
+      "question": "Mikä tietotyyppi sopii liukulukuarvoille Javassa?",
+      "options": [
+        "int",
+        "double",
+        "boolean",
+        "char"
+      ],
+      "correct": "double"
+    },
+    {
+      "question": "Mikä avainsana kuvaa totuusarvotyyppiä Javassa?",
+      "options": [
+        "bool",
+        "boolean",
+        "truth",
+        "bit"
+      ],
+      "correct": "boolean"
+    },
+    {
+      "question": "Miten luot tyhjän ArrayListin merkkijonoille?",
+      "options": [
+        "ArrayList<String> list = ArrayList();",
+        "List<String> list = ArrayList<>();",
+        "ArrayList<String> list = new ArrayList<>();",
+        "ArrayList<String> list = ArrayList<String>();"
+      ],
+      "correct": "ArrayList<String> list = new ArrayList<>();"
+    },
+    {
+      "question": "Mistä pakkauksesta ArrayList-luokka löytyy?",
+      "options": [
+        "java.lang",
+        "java.io",
+        "java.util",
+        "java.time"
+      ],
+      "correct": "java.util"
+    },
+    {
+      "question": "Millä avainsanalla estät luokan periytymisen?",
+      "options": [
+        "sealed",
+        "final",
+        "static",
+        "abstract"
+      ],
+      "correct": "final"
+    },
+    {
+      "question": "Mitä metodia käytetään String-olioiden sisällön vertailuun?",
+      "options": [
+        "compare",
+        "==",
+        "equals",
+        "same"
+      ],
+      "correct": "equals"
+    },
+    {
+      "question": "Mitä System.out.println(3 / 2) tulostaa Javassa?",
+      "options": [
+        "1.5",
+        "1",
+        "2",
+        "Virheen"
+      ],
+      "correct": "1"
+    },
+    {
+      "question": "Mikä seuraavista on for-each -silmukka taulukolle numbers?",
+      "options": [
+        "for (int i = 0; i < numbers.length; i++)",
+        "for int value in numbers",
+        "for (int value : numbers)",
+        "foreach(numbers as value)"
+      ],
+      "correct": "for (int value : numbers)"
+    },
+    {
+      "question": "Miten määrittelet muuttujan, jota ei saa muuttaa Javassa?",
+      "options": [
+        "static int MAX = 10;",
+        "final int MAX = 10;",
+        "const int MAX = 10;",
+        "immutable int MAX = 10;"
+      ],
+      "correct": "final int MAX = 10;"
+    },
+    {
+      "question": "Millä avainsanalla luokka perii toisen luokan Javassa?",
+      "options": [
+        "implements",
+        "extends",
+        "inherits",
+        "super"
+      ],
+      "correct": "extends"
+    },
+    {
+      "question": "Minkä rajapinnan toteuttamalla luokka voidaan käynnistää threadina?",
+      "options": [
+        "Serializable",
+        "Runnable",
+        "Cloneable",
+        "Iterable"
+      ],
+      "correct": "Runnable"
+    },
+    {
+      "question": "Mitä operaattori == tekee olioille Javassa?",
+      "options": [
+        "Vertaa olioiden sisältöä",
+        "Vertaa viitteet samaan olioon",
+        "Kutsuu automaattisesti equals-metodia",
+        "Poistaa olion muistista"
+      ],
+      "correct": "Vertaa viitteet samaan olioon"
+    },
+    {
+      "question": "Mikä seuraavista on tarkistettu poikkeus (checked exception) Javassa?",
+      "options": [
+        "NullPointerException",
+        "RuntimeException",
+        "IOException",
+        "ArithmeticException"
+      ],
+      "correct": "IOException"
+    },
+    {
+      "question": "Mikä kokoelma säilyttää lisäämisjärjestyksen Javassa?",
+      "options": [
+        "HashSet",
+        "TreeMap",
+        "LinkedHashMap",
+        "PriorityQueue"
+      ],
+      "correct": "LinkedHashMap"
+    },
+    {
+      "question": "Mikä luokka on ei-synkronoitu vaihtoehto merkkijonon rakentamiseen?",
+      "options": [
+        "String",
+        "StringBuffer",
+        "StringBuilder",
+        "StringTokenizer"
+      ],
+      "correct": "StringBuilder"
+    },
+    {
+      "question": "Millä avainsanalla määrätään switch-lauseen oletushaara Javassa?",
+      "options": [
+        "else",
+        "default",
+        "fallback",
+        "case default"
+      ],
+      "correct": "default"
+    },
+    {
+      "question": "Millä rakenteella käsittelet poikkeuksen Javassa?",
+      "options": [
+        "try/catch",
+        "if/else",
+        "switch",
+        "catch/try"
+      ],
+      "correct": "try/catch"
+    },
+    {
+      "question": "Mikä suojataso tekee jäsenestä näkyvän vain luokan sisällä?",
+      "options": [
+        "public",
+        "protected",
+        "private",
+        "default"
+      ],
+      "correct": "private"
+    },
+    {
+      "question": "Mitä static-avainsana tarkoittaa kentälle Javassa?",
+      "options": [
+        "Kenttä on vakio",
+        "Kenttä kuuluu luokalle eikä yksittäiselle oliolle",
+        "Kenttä on suojattu",
+        "Kenttä heittää poikkeuksen automaattisesti"
+      ],
+      "correct": "Kenttä kuuluu luokalle eikä yksittäiselle oliolle"
+    },
+    {
+      "question": "Millä metodilla lisätään avain-arvo-pari HashMapiin?",
+      "options": [
+        "add",
+        "append",
+        "put",
+        "push"
+      ],
+      "correct": "put"
+    },
+    {
+      "question": "Miten luot kokonaislukutaulukon, jossa on 5 alkiota?",
+      "options": [
+        "int arr = [5];",
+        "int[] arr = new int[5];",
+        "int arr() = 5;",
+        "int arr = new Array(5);"
+      ],
+      "correct": "int[] arr = new int[5];"
+    },
+    {
+      "question": "Mitä Math.max(4, 7) palauttaa?",
+      "options": [
+        "4",
+        "7",
+        "11",
+        "Virheen"
+      ],
+      "correct": "7"
+    },
+    {
+      "question": "Millä avainsanalla aloitetaan rajapinnan määrittely Javassa?",
+      "options": [
+        "class",
+        "interface",
+        "struct",
+        "module"
+      ],
+      "correct": "interface"
+    },
+    {
+      "question": "Minkä poikkeuksen Thread.sleep on ilmoitettava tai kaapattava?",
+      "options": [
+        "IOException",
+        "InterruptedException",
+        "TimeoutException",
+        "IllegalArgumentException"
+      ],
+      "correct": "InterruptedException"
+    },
+    {
+      "question": "Mikä kokoelma varmistaa, ettei duplikaatteja tallennu?",
+      "options": [
+        "ArrayList",
+        "LinkedList",
+        "HashSet",
+        "Vector"
+      ],
+      "correct": "HashSet"
+    },
+    {
+      "question": "Mikä luokka sopii tehokkaaseen rivien lukemiseen tekstifilestä?",
+      "options": [
+        "File",
+        "FileWriter",
+        "BufferedReader",
+        "Scanner(System.in)"
+      ],
+      "correct": "BufferedReader"
+    },
+    {
+      "question": "Mihin this-viittaus osoittaa metodin sisällä?",
+      "options": [
+        "Staattiseen metodiin",
+        "Luokan nimeen",
+        "Nykyiseen olioon",
+        "Pääohjelmaan"
+      ],
+      "correct": "Nykyiseen olioon"
+    },
+    {
+      "question": "Mikä annotaatio ilmaisee, että metodi korvaa yliluokan metodin?",
+      "options": [
+        "@Override",
+        "@Overload",
+        "@Inherited",
+        "@Implements"
+      ],
+      "correct": "@Override"
+    },
+    {
+      "question": "Millä komennolla keskeytät silmukan Javassa?",
+      "options": [
+        "continue",
+        "break",
+        "stop",
+        "return"
+      ],
+      "correct": "break"
+    },
+    {
+      "question": "Mikä Collections-luokan metodi järjestää listan?",
+      "options": [
+        "Collections.order(list);",
+        "Collections.sort(list);",
+        "Collections.list(list);",
+        "Collections.arrange(list);"
+      ],
+      "correct": "Collections.sort(list);"
+    },
+    {
+      "question": "Mikä on boolean-instanssikentän oletusarvo Javassa?",
+      "options": [
+        "true",
+        "false",
+        "null",
+        "0"
+      ],
+      "correct": "false"
+    },
+    {
+      "question": "Millä avainsanalla kutsut yliluokan konstruktoria?",
+      "options": [
+        "base()",
+        "super()",
+        "this()",
+        "parent()"
+      ],
+      "correct": "super()"
+    },
+    {
+      "question": "Mikä tulostusvirta on tarkoitettu virheilmoituksille Javassa?",
+      "options": [
+        "System.out",
+        "System.err",
+        "System.log",
+        "System.debug"
+      ],
+      "correct": "System.err"
+    },
+    {
+      "question": "Mikä seuraavista on lambda-lauseke Javassa?",
+      "options": [
+        "lambda () { }",
+        "() -> System.out.println(\"Hei\")",
+        "function() { return 0; }",
+        "=> { }"
+      ],
+      "correct": "() -> System.out.println(\"Hei\")"
+    },
+    {
+      "question": "Mikä java.time-luokka palauttaa nykyisen päivän ilman kellonaikaa?",
+      "options": [
+        "LocalDate.now()",
+        "LocalDateTime.now()",
+        "Instant.now()",
+        "Date.now()"
+      ],
+      "correct": "LocalDate.now()"
+    },
+    {
+      "question": "Mikä luokka tarjoaa tarkan desimaalilaskennan Javassa?",
+      "options": [
+        "Double",
+        "Float",
+        "BigDecimal",
+        "BigInteger"
+      ],
+      "correct": "BigDecimal"
+    },
+    {
+      "question": "Millä avainsanalla rajapinnassa määritetään oletusmetodi?",
+      "options": [
+        "default",
+        "static",
+        "private",
+        "option"
+      ],
+      "correct": "default"
+    },
+    {
+      "question": "Mistä main-metodin args-parametrien arvot tulevat?",
+      "options": [
+        "Satunnaisista lukuarvoista",
+        "Komentoriviparametreista",
+        "Ympäristomuuttujista",
+        "Manifest-tiedostosta"
+      ],
+      "correct": "Komentoriviparametreista"
+    },
+    {
+      "question": "Mikä Java-kokoelma toimii pinona (LIFO)?",
+      "options": [
+        "Queue",
+        "Deque",
+        "Stack",
+        "PriorityQueue"
+      ],
+      "correct": "Stack"
+    },
+    {
+      "question": "Millä avainsanalla luot lohkokohtaisen muuttujan JavaScriptissa?",
+      "options": [
+        "var",
+        "let",
+        "const",
+        "static"
+      ],
+      "correct": "let"
+    },
+    {
+      "question": "Mitä typeof [] palauttaa?",
+      "options": [
+        "\"array\"",
+        "\"object\"",
+        "\"list\"",
+        "\"undefined\""
+      ],
+      "correct": "\"object\""
+    },
+    {
+      "question": "Mikä seuraavista on nuolifunktio, joka palauttaa kahden luvun summan?",
+      "options": [
+        "(a, b) => a + b",
+        "function(a, b) { return a + b; }",
+        "sum => a + b",
+        "(a + b) =>"
+      ],
+      "correct": "(a, b) => a + b"
+    },
+    {
+      "question": "Mitä Array.prototype.map tekee?",
+      "options": [
+        "Muokkaa alkuperäistä taulukkoa",
+        "Palauttaa uuden taulukon funktiokutsujen tuloksista",
+        "Poistaa kaikki alkiot",
+        "Järjestää taulukon nousevasti"
+      ],
+      "correct": "Palauttaa uuden taulukon funktiokutsujen tuloksista"
+    },
+    {
+      "question": "Millä metodilla lisätään alkio taulukon loppuun?",
+      "options": [
+        "push",
+        "append",
+        "add",
+        "extend"
+      ],
+      "correct": "push"
+    },
+    {
+      "question": "Mitä console.log('5' == 5) tulostaa?",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "Virheen"
+      ],
+      "correct": "true"
+    },
+    {
+      "question": "Mitä console.log('5' === 5) tulostaa?",
+      "options": [
+        "true",
+        "false",
+        "5",
+        "Virheen"
+      ],
+      "correct": "false"
+    },
+    {
+      "question": "Mikä seuraavista on heti suoritettava funktioilmaisu (IIFE)?",
+      "options": [
+        "(function(){ console.log('x'); })();",
+        "function run(){ console.log('x'); }",
+        "() => console.log('x');",
+        "run();"
+      ],
+      "correct": "(function(){ console.log('x'); })();"
+    },
+    {
+      "question": "Mitä JSON.parse tekee?",
+      "options": [
+        "Muuttaa olion JSON-merkkijonoksi",
+        "Muuttaa JSON-merkkijonon JavaScript-olioksi",
+        "Tarkistaa JSONin oikeellisuuden muuttamatta sitä",
+        "Poistaa välilyönnit merkkijonosta"
+      ],
+      "correct": "Muuttaa JSON-merkkijonon JavaScript-olioksi"
+    },
+    {
+      "question": "Millä lauseella luot uuden Promise-olion?",
+      "options": [
+        "Promise.create(() => {});",
+        "new Promise((resolve, reject) => { ... });",
+        "Promise();",
+        "await Promise;"
+      ],
+      "correct": "new Promise((resolve, reject) => { ... });"
+    },
+    {
+      "question": "Missä yhteydessä voit käyttää await-avainsanaa?",
+      "options": [
+        "Globaalissa tilassa ilman funktiota",
+        "Vain async-funktion sisällä",
+        "Vain luokkien metodeissa",
+        "Vain try-catch-lohkossa"
+      ],
+      "correct": "Vain async-funktion sisällä"
+    },
+    {
+      "question": "Mikä taulukkometodi palauttaa uuden taulukon, jossa on vain ehdon täyttävät alkiot?",
+      "options": [
+        "map",
+        "forEach",
+        "filter",
+        "reduce"
+      ],
+      "correct": "filter"
+    },
+    {
+      "question": "Mitä const-avainsana tarkoittaa muuttujalle JavaScriptissa?",
+      "options": [
+        "Arvoa ei voi koskaan muuttaa millään tavalla",
+        "Muuttujan sidosta ei voi uudelleenosoittaa",
+        "Muuttuja on aina globaali",
+        "Muuttuja piilotetaan muilta moduuleilta"
+      ],
+      "correct": "Muuttujan sidosta ei voi uudelleenosoittaa"
+    },
+    {
+      "question": "Mikä seuraavista käyttää hajautusta kentän name hakemiseen oliosta user?",
+      "options": [
+        "const name = user.name;",
+        "const { name } = user;",
+        "const [name] = user;",
+        "const name <- user;"
+      ],
+      "correct": "const { name } = user;"
+    },
+    {
+      "question": "Mikä on funktion parametrin oletusarvo, jos sitä ei anneta JavaScriptissa?",
+      "options": [
+        "null",
+        "undefined",
+        "0",
+        "\"\""
+      ],
+      "correct": "undefined"
+    },
+    {
+      "question": "Mikä DOM-metodi hakee elementin tunnisteen perusteella?",
+      "options": [
+        "document.find('id')",
+        "document.getElementById('id')",
+        "document.select('#id')",
+        "window.getElement('id')"
+      ],
+      "correct": "document.getElementById('id')"
+    },
+    {
+      "question": "Mitä setTimeout(fn, 0) tekee?",
+      "options": [
+        "Suorittaa fn välittömästi ilman viivettä",
+        "Suorittaa fn, kun nykyinen kutsupino on tyhjentynyt",
+        "Estää fn:n suorituksen kokonaan",
+        "Toistaa fn:n joka sekunti"
+      ],
+      "correct": "Suorittaa fn, kun nykyinen kutsupino on tyhjentynyt"
+    },
+    {
+      "question": "Mikä operaattori levittää taulukon alkiot uuden taulukon sisään?",
+      "options": [
+        "...",
+        "**",
+        "??",
+        "::"
+      ],
+      "correct": "..."
+    },
+    {
+      "question": "Mitä Array.isArray({}) palauttaa?",
+      "options": [
+        "true",
+        "false",
+        "undefined",
+        "Virheen"
+      ],
+      "correct": "false"
+    },
+    {
+      "question": "Mikä merkkijonometodi palauttaa alimerkkijonon ensimmäisen esiintymän indeksin?",
+      "options": [
+        "slice",
+        "includes",
+        "indexOf",
+        "match"
+      ],
+      "correct": "indexOf"
+    }
+  ]
+}
