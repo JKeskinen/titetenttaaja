@@ -1,5 +1,6 @@
 {
-  "TITLE": "Ohjelmoinnin rakenteet - Täydennä koodi",
+  "TITLE": "Ohjelmointi rakenteet - Täydennä koodi",
+  "ORDER": 5,
   "questions": [
     {
       "question": "Täydennä funktio, joka tulostaa nimen.\n\ndef tervehdys(___):\n    print('Hei', nimi)",

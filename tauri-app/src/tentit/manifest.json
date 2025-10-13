@@ -1,50 +1,58 @@
 [
   {
     "id": "fysiikka",
-    "title": "Fysiikka",
+    "title": "Aalto-oppi: Kaavat ja käsitteet",
     "file": "fysiikka.json",
-    "category": "Fysiikka"
+    "category": "Fysiikka",
+    "order": 999
   },
   {
     "id": "ohjelmointi",
-    "title": "Ohjelmointi",
+    "title": "Ohjelmoinnin - Perusteita",
     "file": "ohjelmointi.json",
-    "category": "Ohjelmointi"
+    "category": "Ohjelmointi",
+    "order": 1
   },
   {
     "id": "ohjelmointi-alkeet",
-    "title": "Ohjelmointi alkeet",
+    "title": "Ohjelmoinnin - Tentti: Alkeet",
     "file": "ohjelmointi_alkeet.json",
-    "category": "Ohjelmointi"
+    "category": "Ohjelmointi",
+    "order": 2
   },
   {
     "id": "ohjelmointi-jatkotentti",
-    "title": "Ohjelmointi jatkotentti",
+    "title": "Ohjelmoinnin - Tentti: Edistynyt",
     "file": "ohjelmointi_jatkotentti.json",
-    "category": "Ohjelmointi"
+    "category": "Ohjelmointi",
+    "order": 3
   },
   {
     "id": "ohjelmointi-laaja",
-    "title": "Ohjelmointi laaja",
+    "title": "Ohjelmoinnin - Tentti: Laaja",
     "file": "ohjelmointi_laaja.json",
-    "category": "Ohjelmointi"
+    "category": "Ohjelmointi",
+    "order": 4
   },
   {
-    "id": "ohjelmistosuunnittelu",
-    "title": "Ohjelmistosuunnittelu",
-    "file": "ohjelmistosuunnittelu.json",
-    "category": "Tietotekniikka"
+    "id": "ohjelmointi-rakenteet",
+    "title": "Ohjelmointi rakenteet - Täydennä koodi",
+    "file": "Ohjelmointi rakenteet.json",
+    "category": "Ohjelmointi",
+    "order": 5
   },
   {
     "id": "tietoliikenne",
     "title": "Tietoliikenne",
     "file": "tietoliikenne.json",
-    "category": "Tietotekniikka"
+    "category": "Tietotekniikka",
+    "order": 999
   },
   {
-    "id": "taydennakoodi",
-    "title": "Taydennakoodi",
-    "file": "taydennakoodi.json",
-    "category": "Muut"
+    "id": "ohjelmistosuunnittelu",
+    "title": "Ohjelmistosuunnittelu",
+    "file": "ohjelmistosuunnittelu.json",
+    "category": "Ohjelmistosuunnittelu",
+    "order": 999
   }
 ]

@@ -1,5 +1,6 @@
 {
-  "TITLE": "Ohjelmointi - Laaja",
+  "TITLE": "Ohjelmoinnin - Tentti: Laaja",
+  "ORDER": 4,
   "questions": [
     {
       "question": "Python: täydennä funktio.\n```python\ndef greet(name):\n    return \"Hei \" + ______\n```",
