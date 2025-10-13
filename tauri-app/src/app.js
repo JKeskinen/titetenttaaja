@@ -1,10 +1,7 @@
-const isTauri = typeof window !== "undefined" && !!window.__TAURI__;
-
 const CONFIG = {
   manifestPath: "./tentit/manifest.json",
   basePath: "./tentit/",
 };
-
 
 const elements = {
   examSelect: document.querySelector("#exam-select"),
@@ -20,7 +17,9 @@ const elements = {
   nextButton: document.querySelector("#next-btn"),
   resultsSection: document.querySelector("#results"),
   resultsSummary: document.querySelector("#results-summary"),
+  wrongAnswers: document.querySelector("#wrong-answers"),
   restartButton: document.querySelector("#restart-btn"),
+  themeToggle: document.querySelector("#theme-toggle"),
 };
 
 const state = {
@@ -30,7 +29,10 @@ const state = {
   currentQuestionIndex: 0,
   score: 0,
   hasAnswered: false,
+  wrongAnswers: [],
 };
+
+const resolveAssetUrl = async (relativePath) => relativePath;
 
 const CATEGORY_FALLBACK_KEY = "muut";
 const CATEGORY_DISPLAY_NAMES = {
@@ -41,16 +43,29 @@ const CATEGORY_DISPLAY_NAMES = {
 };
 const CATEGORY_KEY_ORDER = ["fysiikka", "ohjelmointi", "tietotekniikka", CATEGORY_FALLBACK_KEY];
 
+// --- Teemavaihto ---
+const THEME_KEY = "theme";
+const DEFAULT_THEME = "dark";
+
+elements.themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.dataset.theme || DEFAULT_THEME;
+  const next = current === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  elements.themeToggle.textContent =
+    next === "dark" ? "🌙 Tumma tila" : "☀️ Vaalea tila";
+  localStorage.setItem(THEME_KEY, next);
+});
+
+const savedTheme = localStorage.getItem(THEME_KEY);
+const initialTheme = savedTheme || DEFAULT_THEME;
+document.documentElement.dataset.theme = initialTheme;
+elements.themeToggle.textContent =
+  initialTheme === "dark" ? "🌙 Tumma tila" : "☀️ Vaalea tila";
+
+// --- Manifestin haku ---
 async function fetchManifest() {
-  if (state.manifestLoaded) {
-    return state.manifest;
-  }
-
+  if (state.manifestLoaded) return state.manifest;
   const response = await fetch(CONFIG.manifestPath, { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error("Tenttilistaa ei voitu ladata.");
-  }
-
   const manifestData = await response.json();
   state.manifest = manifestData.map((entry) => ({
     ...entry,
@@ -62,6 +77,7 @@ async function fetchManifest() {
   return state.manifest;
 }
 
+// --- Tenttilistan rakentaminen ---
 function populateExamSelect() {
   const select = elements.examSelect;
   const manifest = state.manifest;
@@ -72,321 +88,169 @@ function populateExamSelect() {
     const rawCategory = typeof exam.category === "string" ? exam.category.trim() : "";
     const categoryKey = rawCategory ? rawCategory.toLowerCase() : CATEGORY_FALLBACK_KEY;
     const displayName =
-      CATEGORY_DISPLAY_NAMES[categoryKey] ?? (rawCategory || CATEGORY_DISPLAY_NAMES[CATEGORY_FALLBACK_KEY]);
+      CATEGORY_DISPLAY_NAMES[categoryKey] ??
+      (rawCategory || CATEGORY_DISPLAY_NAMES[CATEGORY_FALLBACK_KEY]);
 
-    if (!grouped.has(categoryKey)) {
+    if (!grouped.has(categoryKey))
       grouped.set(categoryKey, { displayName, exams: [] });
-    }
-    const group = grouped.get(categoryKey);
-    if (rawCategory && !CATEGORY_DISPLAY_NAMES[categoryKey]) {
-      group.displayName = rawCategory;
-    }
-    group.exams.push(exam);
+    grouped.get(categoryKey).exams.push(exam);
   });
 
-  const orderedKeys = [
-    ...CATEGORY_KEY_ORDER.filter((key) => grouped.has(key)),
-    ...[...grouped.keys()]
-      .filter((key) => !CATEGORY_KEY_ORDER.includes(key))
-      .sort((a, b) =>
-        grouped.get(a).displayName.localeCompare(
-          grouped.get(b).displayName,
-          "fi",
-          { sensitivity: "base" },
-        ),
-      ),
-  ];
+  const orderedKeys = CATEGORY_KEY_ORDER.filter((key) => grouped.has(key)).concat(
+    [...grouped.keys()].filter((key) => !CATEGORY_KEY_ORDER.includes(key))
+  );
 
   orderedKeys.forEach((key) => {
     const group = grouped.get(key);
-    if (!group) {
-      return;
-    }
-
-    group.exams.sort((a, b) => (a.title ?? "").localeCompare(b.title ?? "", "fi", { sensitivity: "base" }));
-
     const headerOption = document.createElement("option");
     headerOption.textContent = `— ${group.displayName} —`;
     headerOption.disabled = true;
-    headerOption.value = "";
-    headerOption.dataset.category = key;
     select.append(headerOption);
-
     group.exams.forEach((exam) => {
       const option = document.createElement("option");
       option.value = exam.id;
-      option.textContent = `  ${exam.title ?? exam.id}`;
-      option.dataset.category = key;
+      option.textContent = `${exam.title}`;
       select.append(option);
     });
   });
-
-  const firstAvailable = [...select.options].find((opt) => !opt.disabled);
-  if (firstAvailable) {
-    select.value = firstAvailable.value;
-  } else {
-    select.value = "";
-    return;
-  }
 }
 
-function buildAssetPath(file) {
-  return `${CONFIG.basePath}${file}`;
-}
-
+// --- Tenttien lataus ---
 async function loadQuiz(examId) {
   const manifest = await fetchManifest();
-  const manifestEntry = manifest.find((entry) => entry.id === examId);
-  if (!manifestEntry) {
-    throw new Error(`Tenttiä ei löydy: ${examId}`);
-  }
-
-  const response = await fetch(buildAssetPath(manifestEntry.file), { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`Tenttitiedostoa ei voitu hakea (${response.status})`);
-  }
-
-  const quizData = await response.json();
-  if (!quizData || !Array.isArray(quizData.questions)) {
-    throw new Error("Tenttitiedoston rakenne on virheellinen.");
-  }
-
-  return { manifestEntry, quizData };
+  const entry = manifest.find((e) => e.id === examId);
+  const response = await fetch(CONFIG.basePath + entry.file, { cache: "no-store" });
+  return { manifestEntry: entry, quizData: await response.json() };
 }
 
 function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i -= 1) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
 
-function cloneQuestionWithShuffledOptions(question) {
-  const options = Array.isArray(question.options) ? [...question.options] : [];
-  return {
-    ...question,
-    options: shuffle(options),
-  };
-}
-
 function determineQuestionSet(quizData) {
-  const requestedCountRaw = elements.questionCountInput?.value.trim() ?? "";
-  const total = quizData.questions.length;
-
-  if (!requestedCountRaw) {
-    return {
-      questions: shuffle([...quizData.questions]).map(cloneQuestionWithShuffledOptions),
-      message: "",
-    };
-  }
-
-  const requested = Number.parseInt(requestedCountRaw, 10);
-  if (Number.isNaN(requested)) {
-    return {
-      questions: shuffle([...quizData.questions]),
-      message: "Kysymysten määrän pitää olla numero. Käytetään kaikkia kysymyksiä.",
-    };
-  }
-
-  const clamped = Math.max(1, Math.min(requested, total));
-  const message =
-    clamped !== requested
-      ? `Kysymysten määrä rajattiin arvoon ${clamped}/${total}.`
-      : "";
-
-  if (clamped >= total) {
-    return {
-      questions: shuffle([...quizData.questions]).map(cloneQuestionWithShuffledOptions),
-      message,
-    };
-  }
-
-  const selected = shuffle([...quizData.questions])
-    .slice(0, clamped)
-    .map(cloneQuestionWithShuffledOptions);
-  return {
-    questions: selected,
-    message,
-  };
+  const requested =
+    Number(elements.questionCountInput.value) || quizData.questions.length;
+  return shuffle([...quizData.questions])
+    .slice(0, requested)
+    .map((q) => ({ ...q, options: shuffle([...q.options]) }));
 }
 
 function startQuiz(manifestEntry, quizData, questions) {
   state.quiz = {
     manifestEntry,
-    title: quizData.TITLE ?? manifestEntry.title ?? "Monivalintatentti",
     questions,
+    title: quizData.TITLE ?? manifestEntry.title,
   };
   state.currentQuestionIndex = 0;
   state.score = 0;
-  state.hasAnswered = false;
-
+  state.wrongAnswers = [];
   elements.quizTitle.textContent = state.quiz.title;
-  elements.scoreLabel.textContent = "Pisteet: 0";
-  elements.progressLabel.textContent = "";
-
   elements.quizSection.classList.remove("hidden");
   elements.resultsSection.classList.add("hidden");
-  elements.nextButton.classList.add("hidden");
-
   renderQuestion();
 }
 
 function renderQuestion() {
-  const question = state.quiz.questions[state.currentQuestionIndex];
-  if (!question) {
-    showResults();
-    return;
-  }
-
-  state.hasAnswered = false;
+  const q = state.quiz.questions[state.currentQuestionIndex];
   elements.progressLabel.textContent = `Kysymys ${state.currentQuestionIndex + 1}/${state.quiz.questions.length}`;
-  elements.questionText.textContent = question.question;
+  elements.questionText.textContent = q.question;
   elements.optionsList.innerHTML = "";
-
-  question.options.forEach((optionText, index) => {
+  q.options.forEach((option) => {
     const li = document.createElement("li");
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "option";
-    button.textContent = optionText;
-    button.dataset.index = index.toString();
-    button.addEventListener("click", () => handleAnswer(button, question));
-    li.append(button);
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = option;
+    btn.onclick = () => handleAnswer(btn, q);
+    li.append(btn);
     elements.optionsList.append(li);
   });
 }
 
 function handleAnswer(button, question) {
-  if (state.hasAnswered) {
-    return;
-  }
+  if (state.hasAnswered) return;
   state.hasAnswered = true;
 
-  const selectedAnswer = button.textContent ?? "";
-  const isCorrect = selectedAnswer === question.correct;
-
-  if (isCorrect) {
-    state.score += 1;
+  const correct = button.textContent === question.correct;
+  if (correct) {
     button.classList.add("correct");
+    state.score++;
   } else {
     button.classList.add("incorrect");
-    for (const optionButton of elements.optionsList.querySelectorAll("button")) {
-      if (optionButton.textContent === question.correct) {
-        optionButton.classList.add("correct");
-        break;
-      }
-    }
+    state.wrongAnswers.push({
+      question: question.question,
+      userAnswer: button.textContent,
+      correctAnswer: question.correct,
+    });
+    [...elements.optionsList.querySelectorAll(".option")].forEach((btn) => {
+      if (btn.textContent === question.correct) btn.classList.add("correct");
+      btn.disabled = true;
+    });
   }
-
   elements.scoreLabel.textContent = `Pisteet: ${state.score}`;
   elements.nextButton.classList.remove("hidden");
-
-  for (const optionButton of elements.optionsList.querySelectorAll("button")) {
-    optionButton.disabled = true;
-  }
 }
-
-function nextQuestion() {
-  if (!state.quiz) {
-    return;
-  }
-
-  state.currentQuestionIndex += 1;
-  if (state.currentQuestionIndex >= state.quiz.questions.length) {
-    showResults();
-    return;
-  }
-
-  elements.nextButton.classList.add("hidden");
-  renderQuestion();
-}
-
-function showResults() {
-  const total = state.quiz?.questions.length ?? 0;
-  elements.quizSection.classList.add("hidden");
-  elements.resultsSection.classList.remove("hidden");
-  elements.resultsSummary.textContent = `Sait ${state.score}/${total} pistettä.`;
-}
-
-function resetUI() {
-  elements.quizSection.classList.add("hidden");
-  elements.resultsSection.classList.add("hidden");
-  elements.nextButton.classList.add("hidden");
-  elements.optionsList.innerHTML = "";
-  elements.questionText.textContent = "";
-  elements.progressLabel.textContent = "";
-  elements.scoreLabel.textContent = "";
-}
-
-function setLoading(isLoading, message = "") {
-  elements.startButton.disabled = isLoading;
-  elements.status.textContent = message;
-}
-
-elements.startButton.addEventListener("click", async () => {
-  const selectedExam = elements.examSelect.value;
-  if (!selectedExam) {
-    elements.status.textContent = "Valitse tentti ennen aloittamista.";
-    return;
-  }
-
-  resetUI();
-  setLoading(true, "Ladataan tenttiä...");
-  try {
-    const { manifestEntry, quizData } = await loadQuiz(selectedExam);
-    const { questions, message } = determineQuestionSet(quizData);
-    startQuiz(manifestEntry, quizData, questions);
-    elements.status.textContent = message ?? "";
-  } catch (error) {
-    console.error(error);
-    elements.status.textContent =
-      error instanceof Error ? error.message : "Tuntematon virhe tenttiä ladattaessa.";
-  } finally {
-    setLoading(false);
-  }
-});
 
 elements.nextButton.addEventListener("click", () => {
-  nextQuestion();
+  state.hasAnswered = false;
+  state.currentQuestionIndex++;
+  if (state.currentQuestionIndex < state.quiz.questions.length) renderQuestion();
+  else showResults();
+  elements.nextButton.classList.add("hidden");
 });
 
-elements.restartButton.addEventListener("click", async () => {
-  const activeExamId = state.quiz?.manifestEntry?.id;
-  if (!activeExamId) {
-    return;
-  }
+function showResults() {
+  elements.quizSection.classList.add("hidden");
+  elements.resultsSection.classList.remove("hidden");
+  elements.resultsSummary.textContent = `Sait ${state.score}/${state.quiz.questions.length} pistettä.`;
 
-  resetUI();
-  setLoading(true, "Käynnistetään tenttiä uudelleen...");
-  try {
-    const { manifestEntry, quizData } = await loadQuiz(activeExamId);
-    const { questions, message } = determineQuestionSet(quizData);
-    startQuiz(manifestEntry, quizData, questions);
-    elements.status.textContent = message ?? "";
-  } catch (error) {
-    console.error(error);
-    elements.status.textContent =
-      error instanceof Error ? error.message : "Tenttiä ei voitu käynnistää uudelleen.";
-  } finally {
-    setLoading(false);
+  const wrongList = state.wrongAnswers
+    .map(
+      (w) => `
+      <div class="wrong-answer">
+        <strong>Kysymys: ${w.question}</strong><br/>
+        <span class="wrong-your"><b class="label-wrong">VASTASIT:</b> ${w.userAnswer}</span><br/>
+        <span class="wrong-correct"><b class="label-correct">OIKEA:</b> ${w.correctAnswer}</span>
+      </div>`
+    )
+    .join("");
+
+  if (state.wrongAnswers.length > 0) {
+    elements.wrongAnswers.innerHTML = `
+      <h3 class="wrong-heading">Tässä tentin väärät vastaukset:</h3>
+      ${wrongList}
+    `;
+  } else {
+    elements.wrongAnswers.innerHTML = "<p>Kaikki oikein!</p>";
   }
+}
+
+
+elements.startButton.addEventListener("click", async () => {
+  if (!elements.examSelect.value) return;
+  const { manifestEntry, quizData } = await loadQuiz(elements.examSelect.value);
+  const questions = determineQuestionSet(quizData);
+  startQuiz(manifestEntry, quizData, questions);
 });
 
-async function initialize() {
-  console.log("Manifest path:", CONFIG.manifestPath);
-  setLoading(true, "Ladataan tenttilistaa...");
+elements.restartButton.addEventListener("click", () => {
+  startQuiz(
+    state.quiz.manifestEntry,
+    { TITLE: state.quiz.title, questions: state.quiz.questions },
+    state.quiz.questions
+  );
+});
+
+// --- Ladataan tenttilista sivun latauksen jälkeen ---
+document.addEventListener("DOMContentLoaded", async () => {
   try {
     await fetchManifest();
     populateExamSelect();
-    elements.status.textContent = "";
-  } catch (error) {
-    console.error(error);
-    elements.status.textContent =
-      error instanceof Error ? error.message : "Tenttilistan lataus epäonnistui.";
-  } finally {
-    setLoading(false);
+  } catch (err) {
+    console.error("Virhe tenttilistan latauksessa:", err);
+    elements.examSelect.innerHTML = "<option disabled>Virhe tenttilistan latauksessa</option>";
   }
-}
-
-initialize();
+});

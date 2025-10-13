@@ -9,8 +9,9 @@
   <body>
     <main class="app">
       <header class="hero">
-        <h1>TiteTenttaaja</h1>
+        <h1>TiTenttaaja</h1>
         <p>Valitse tentti ja testaa tietosi monivalintakysymyksillä.</p>
+        <button id="theme-toggle" class="theme-toggle">🌙 Tumma tila</button>
       </header>
 
       <section class="card controls">
@@ -56,6 +57,7 @@
       <section id="results" class="card results hidden">
         <h2>Tulokset</h2>
         <p id="results-summary"></p>
+        <div id="wrong-answers"></div>
         <button id="restart-btn">Aloita alusta</button>
       </section>
     </main>
