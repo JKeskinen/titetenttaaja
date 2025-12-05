@@ -1,182 +1,122 @@
 ﻿{
-  "TITLE": "Elektroniikan perusteet - Lukumateriaali",
-  "ORDER": 1,
-  "isReadingMaterial": true,
-  "content": [
-    {
-      "title": "1. Sähköpiirin perusrakenne",
-      "image": "./images/1.png",
-      "text": "Sähköpiirin perusrakenne koostuu virtalähteestä, johtimista ja kuormasta, jotka muodostavat suljetun silmukan. Vesi-analogian avulla voidaan ymmärtää sähkövirta: virtalähde on kuin pumppu, johdot ovat putkia ja kuorma on esimerkiksi vesirootti. Tämä analogia auttaa hahmottamaan, kuinka energia siirtyy piirin eri osien kautta."
-    },
-    {
-      "title": "2. Jännitteen merkinnät piirikaavioissa",
-      "image": "./images/2.png",
-      "text": "Jännitteen merkitseminen piirikaavioissa vaatii selkeät symbolit ja merkintäkonventiot. Plusmerkkiä käytetään merkitsemään korkeampaa potentiaalia ja miinusmerkkiä matalampaa potentiaalia. Näiden merkkien oikea käyttö on kriittistä piirin oikean toiminnan ymmärtämisen ja rakentamisen kannalta."
-    },
-    {
-      "title": "3. Ground-referenssipiste",
-      "image": "./images/3.png",
-      "text": "Maadoitus eli ground on piirikaavioissa valittu referenssipiste, jonka jännite määritellään nollaksi. Kaikki muut jännitteet mitataan suhteessa tähän referenssipisteeseen, mikä yksinkertaistaa laskelmia ja selventää piirin toimintaa. Maadoitus voi olla joko fyysinen maayhteys tai piirin valitsema referenssipiste."
-    },
-    {
-      "title": "4. Peruskomponentit: kondensaattorit, kelat, vastukset",
-      "image": "./images/4.png",
-      "text": "Peruskomponentit muodostavat sähköpiirien rakennuspalikat. Vastukset vastustavat virran kulkua ja muuntavat energiaa lämmöksi, kondensaattorit varastoivat energiaa sähkökenttään ja kelat varastoivat energiaa magneettikenttään. Jokaisen komponentin ominaisuudet ja käyttötavat ovat kriittisiä piirien suunnittelussa."
-    },
-    {
-      "title": "5. Jännitemerkinnät soveltaminen",
-      "image": "./images/5.png",
-      "text": "Jännitemerkintöjen oikea soveltaminen käytännössä vaatii johdonmukaisuutta ja selkeyttä piirikaavioissa. Jännitemerkkien oikea asettelu auttaa välttämään virheitä piirin analysoinnissa. Merkintäkonventioiden noudattaminen mahdollistaa piirien nopean ja luotettavan tulkinnan."
-    },
-    {
-      "title": "6. Vastukset sarjassa ja rinnan",
-      "image": "./images/6.png",
-      "text": "Vastukset voidaan kytkeä sarjaan tai rinnakkain muodostamaan erilaisia kokonaisresistansseja. Sarjaankytkennässä kokonaisvastus on yksittäisten resistanssien summa, rinnakkaiskytkennässä kokonaisvastus on pienempi kuin pienin yksittäinen resistanssi. Näiden kytkentätapojen ymmärtäminen on välttämätöntä piirien analyysissä."
-    },
-    {
-      "title": "7. Ohmin laki",
-      "image": "./images/7.png",
-      "text": "Ohmin laki (U = R  I) on sähkötekniikan perusyhtälö, joka kuvaa jännitteen, virran ja resistanssin välistä suhdetta. Se tarkoittaa, että jännite on verrannollinen virran ja resistanssin tuloon, ja se pätee ohmisille komponenteille kuten vastuksille. Ohmin lain hallitseminen on välttämätöntä kaiken muun sähkötekniikan ymmärtämiselle."
-    },
-    {
-      "title": "8. Elektroniikan perusteiden johdanto",
-      "image": "./images/8.png",
-      "text": "Elektroniikan perusteet käsittelevät sähköisen energian peruskäsitteitä ja niiden soveltamista. Tämä luku esittelee tärkeimmät käsitteet, kuten jännite, virta ja resistanssi, sekä niiden väliset suhteet. Näiden peruskäsitteiden oppiminen on perusta kaikille muulle sähkötekniikan osaamukselle."
-    },
-    {
-      "title": "9. Kapasitanssi ja faradi",
-      "image": "./images/9.png",
-      "text": "Kapasitanssi mittaa komponentin kykyä varastoida sähkövarausta sähkökenttään, ja se mitataan faradeissa (F). Kondensaattori koostuu kahdesta johtavasta levystä, joiden välissä on eriste, joka määrittää komponentin kapasitanssin. Kapasitanssi riippuu levyjen pinta-alasta, niiden välisestä etäisyydestä ja eristeen laadusta."
-    },
-    {
-      "title": "10. SI-yksikköjärjestelmä",
-      "image": "./images/10.png",
-      "text": "SI-etuliitteet käytetään suurten ja pienten lukujen kirjoittamiseen tieteellisessä notaatiossa yksinkertaisemmin. Yleisimmät etuliitteet sähkötekniikassa ovat milli (m), mikro (μ), nano (n), piko (p) ja mega (M), giga (G). Näiden etuliitteiden hallitseminen on tärkeää mittaustuloksien ymmärtämiselle ja laskelmissa."
-    },
-    {
-      "title": "11. Virtapiirin määritelmä",
-      "image": "./images/11.png",
-      "text": "Virtapiiri on suljettu silmukka, jossa virta virtaa virtalähteestä kuormituksen kautta takaisin virtalähteeseen. Virta mitataan ampeereissa (A) ja se edustaa varauksen kulkunopeutta piirissä. Toimiva virtapiiri vaatii suljetun silmukan, virtalähteen ja kuormituksen, jonka kautta virta voi kulkea."
-    },
-    {
-      "title": "12. Sähkömoottorivoima (e.m.f.)",
-      "image": "./images/12.png",
-      "text": "Sähkömoottorivoima (e.m.f.) on virtalähteen kyvyttömyyden aikaansaama jännite, joka saa varaukset liikkumaan piirissä. Ideaalisen virtalähteen e.m.f. pysyy vakiona virran määrästä riippumatta, mutta todellisissa virtalähteissä on sisäinen resistanssi, joka vaikuttaa tuotettavaan jännitteeseen. E.m.f. mitataan volteissa (V)."
-    },
-    {
-      "title": "13. Suljetun piirin periaate",
-      "image": "./images/13.png",
-      "text": "Toimiva virtapiiri vaatii kolme perusosaa: virtalähteen, johtavan polun ja kuormituksen. Virtalähde syöttää energiaa, johtava polku siirtää virran ja kuormitus kuluttaa energiaa tai tekee hyödyllistä työtä. Millä tahansa näistä komponenteista puuttuminen estää virran kulkua."
-    },
-    {
-      "title": "14. Jännitemittaus voltimittarilla",
-      "image": "./images/14.png",
-      "text": "Jännite mitataan volttimittarilla, joka on kytketty rinnan mitattavan komponentin tai pisteen yli. Volttimittarissa on erittäin korkea sisäinen resistanssi, jotta se ei häiritse piirin toimintaa. Jännitemittaus näyttää potentiaalieron kahden pisteen välillä piirissä."
-    },
-    {
-      "title": "15. Jännitesuunnan osoittaminen",
-      "image": "./images/15.png",
-      "text": "Jännitemerkeillä osoitetaan piirissä olevan komponentin polaarisuus ja jännitteen napaisuus. Kaksoisnuoli tai  ja  symbolit ilmoittavat, kummalla puolella komponenttia on korkeampi ja kummalla matalampi potentiaali. Oikeiden merkintöjen käyttö varmistaa, että piirin analyysi on johdonmukainen ja virheistä vapaa."
-    },
-    {
-      "title": "16. Tasavirta (DC) ja vaihtovirta (AC)",
-      "image": "./images/16.png",
-      "text": "Tasavirta (DC) kulkee yhteen suuntaan samalla suuruudella ja on tyypillistä akuista ja paristoista. Vaihtovirta (AC) vaihtelee siniaaltokäyrän mukaisesti sekä suuruuden että suunnan suhteen, ja se on yleinen vaihtovirta-verkoissa. AC ja DC vaativat erilaisia komponentteja ja analyysimenetelmiä, ja niiden ymmärtäminen on keskeistä sähkötekniikassa."
-    },
-    {
-      "title": "17. Kondensaattorin varastoima energia",
-      "image": "./images/17.png",
-      "text": "Kondensaattorissa varastoituva energia riippuu kapasitanssista ja jännitteestä sen levyjen välillä. Energia lasketaan kaavalla E = ½CV, jossa C on kapasitanssi ja V on jännite. Kondensaattori voi vapauttaa tämän energian nopeasti, mikä tekee siitä hyödyllisen sovelluksissa, joissa tarvitaan energian lyhyt purkausta."
-    },
-    {
-      "title": "18. Ohmin lain käytännön soveltaminen",
-      "image": "./images/18.png",
-      "text": "Ohmin lakia sovelletaan käytännön laskelmissa määritettäessä jännitettä, virtaa tai resistanssia, kun kaksi näistä tunnetaan. Kaavaa U = R  I voidaan järjestää eri tavoin: I = U/R tai R = U/I, ja oikean muodon valinta helpottaa laskemista. Ohmin lain soveltaminen on pohja kaikille piirianalyysille."
-    },
-    {
-      "title": "19. Kirchhoffin virtalaki (KCL)",
-      "image": "./images/19.png",
-      "text": "Kirchhoffin virtalaki sanoo, että solmupisteeseen tulevien virtojen summa on yhtä suuri kuin siitä poistuvia virtoja. Tämä perustuu varauksen säilymiseen: varaus ei voi kertyä solmupisteeseen. KCL on välttämätön työkalu monimutkaisten piirien ratkaisemisessa, varsinkin rinnakkaiskytkennöissä."
-    },
-    {
-      "title": "20. Kirchhoffin jännitelaki (KVL)",
-      "image": "./images/20.png",
-      "text": "Kirchhoffin jännitelaki sanoo, että suljetussa silmukassa olevien jännitteiden algebrallinen summa on nolla. Tämä perustuu energian säilymiseen: energia, jonka virtalähde tuottaa, on yhtä suuri kuin energia, jonka kuormitukset ja resistanssi kuluttavat. KVL on olennainen työkalu sarjakytkentöjen analysoimisessa."
-    },
-    {
-      "title": "21. Tehohäviö vastuksissa",
-      "image": "./images/21.png",
-      "text": "Teho, joka kuluu vastuksessa tai muussa resistanssissa, lasketaan kaavalla P = UI = IR = U/R. Tämä teho muunnetaan pääasiassa lämmöksi, mikä on vastuksien päätehtävä virtapiireissä. Tehohäviön ymmärtäminen on tärkeää turvallisuuden ja komponenttien valitsemisen kannalta."
-    },
-    {
-      "title": "22. Vastukset rinnankytkennässä",
-      "image": "./images/22.png",
-      "text": "Rinnakkaiskytkennässä vastuksien välillä on sama jännite, mutta virta jakautuu niiden kesken. Kokonaisresistanssi on pienempi kuin pienin yksittäinen resistanssi, ja se lasketaan kaavalla 1/R_tot = 1/R1 + 1/R2 + ... Rinnakkaiskytkentö on yleinen käytännössä, jotta voidaan saada haluttuja resistanssejä tai jakaa virtaa."
-    },
-    {
-      "title": "23. Jännitejakajan periaate",
-      "image": "./images/23.png",
-      "text": "Jännitejakaja koostuu kahdesta sarjaan kytketystä vastuksesta, jotka jakavat kokonaisjännitteen niiden välisten suhteellisten suuruuksien mukaisesti. Jaettu jännite lasketaan kaavalla V_out = V_in  (R2 / (R1 + R2)). Jännitejakaja on yksinkertainen ja hyödyllinen menetelmä haluttujen jännitteiden aikaansaamiseksi piireissä."
-    },
-    {
-      "title": "24. Jännitejaon laskuesimerkki 1",
-      "image": "./images/24.png",
-      "text": "Ensimmäisessä jännitejaon esimerkissä näytetään, kuinka kaksi sarjassa olevaa vastusta jakavat lähdejännitteen. Jos kaksi vastusta ovat yhtä suuret, jännite jakautuu tasaisesti puoliksi. Tämä esimerkki osoittaa jännitejakajakaavan käytännön soveltamisen ja auttaa ymmärtämään, kuinka eri resistanssit vaikuttavat jännitteen jakautumiseen."
-    },
-    {
-      "title": "25. Jännitejaon laskuesimerkki 2",
-      "image": "./images/25.png",
-      "text": "Toisessa esimerkissä vastukset ovat eri suuruiset, jolloin jännite jakautuu epätasaisesti. Suurempi vastus saa suuremman osuuden jännitteestä, mitä voidaan laskea jännitejakajakaavalla. Tämä esimerkki vahvistaa ymmärtämystä siitä, kuinka resistanssien suhde määrittää jännitteen jakautumisen."
-    },
-    {
-      "title": "26. Taajuus ja jaksonaika",
-      "image": "./images/26.png",
-      "text": "Taajuus (f) ilmaisee, kuinka monta kertaa vaihtuva signaali toistaa itseään sekunnissa, ja se mitataan hertseinä (Hz). Jaksonaika (T) on yhden täydellisen jakson aika, ja taajuuden ja jaksontajan välinen suhde on f = 1/T. Nämä käsitteet ovat olennaisia vaihtovirtasignaalien ymmärtämisessä."
-    },
-    {
-      "title": "27. Piirrosmerkit ja standardit",
-      "image": "./images/27.png",
-      "text": "Piirrosmerkit eli piirikomponenttien symbolit ovat standardoituja kuvauksia, joita käytetään sähköpiirikaavioissa. Jokainen komponentti, kuten vastus, kondensaattori, kela ja virtalähde, on omalla symbolillaan. Näiden symbolien tunteminen on välttämätöntä piirikaavioiden lukemiselle ja ymmärtämiselle."
-    },
-    {
-      "title": "28. Symbolien fyysinen merkitys",
-      "image": "./images/28.png",
-      "text": "Piirrosmerkkien merkitys perustuu niiden fyysisiin ominaisuuksiin ja toimintaan. Esimerkiksi vastuksen merkki heijastaa sen vastustava luonnetta, kondensaattorin merkki edustaa kahta erillään olevaa levyä. Merkintöjen ymmärtäminen auttaa hahmottamaan komponenttien fyysisiä ominaisuuksia."
-    },
-    {
-      "title": "29. Oppimisvaikeudet elektroniikassa",
-      "image": "./images/29.png",
-      "text": "Elektroniikan perusaiheiden oppiminen voi olla haastavaa abstraktien käsitteiden, kuten virran ja jännitteen, vuoksi. Monet opiskelijat sekoittavat nämä käsitteet toisiinsa tai eivät ymmärrä niiden välistä suhdetta. Näihin vaikeuksiin voidaan puuttua analogioiden avulla ja käytännön kokeiluilla."
-    },
-    {
-      "title": "30. Jatkuva oppiminen ja kertaus",
-      "image": "./images/30.png",
-      "text": "Sähkötekniikan oppiminen ei pysähdy perusasioihin vaan vaatii jatkuvaa kertausta ja syventymistä monimutkaisempiin aiheisiin. Käytännön harjoittelulla ja laboratoriotyöllä opiskelijat voivat vahvistaa teoreettista osaamista. Integraalivirtalaiitapiirit, taajuusanalyysi ja muut edistyneet aiheet rakentuvat näiden perusteisiin."
-    },
-    {
-      "title": "31. Peruskomponentit käytännössä",
-      "image": "./images/31.png",
-      "text": "Peruskomponentit, kuten vastukset, kondensaattorit ja kelat, ovat käytännössä olemassa erilaisissa muodoissa ja kokoluokissa. Komponenttien valitseminen oikealla arvolla on kriittistä piirin toiminnan kannalta. Käytännön sovelluksissa komponenttien toleranssi, lämpötilariippuvuus ja muut ominaisuudet tulee huomioida."
-    },
-    {
-      "title": "32. Piirin peruselementit",
-      "image": "./images/32.png",
-      "text": "Piirin peruselementit ovat virtalähde, johdot, vastukset ja muut komponentit, jotka yhdessä muodostavat toimivan piirin. Jokainen elementti omalla funktiolleen, virtalähde syöttää energiaa, johdot siirtävät virtaa ja vastukset rajoittavat sitä. Näiden elementtien yhteensovittaminen on sähköpiirin suunnittelun perusta."
-    },
-    {
-      "title": "33. Potentiaalit piirissä",
-      "image": "./images/33.png",
-      "text": "Potentiaali piirissä on jännite tietyssä pisteessä suhteessa maadoituspisteeseen. Potentiaalit vaihtuvat piirissä komponentteista ja resistansseista johtuen. Potentiaalien ymmärtäminen auttaa analysoinnissa ja vianmäärityksessä, sillä se osoittaa, millaisia jännitteitä eri kohdissa piiriä on."
-    },
-    {
-      "title": "34. Energian muunnokset piireissä",
-      "image": "./images/34.png",
-      "text": "Sähköpiireissä energiaa muunnetaan erilaisista muodoista toisiksi: sähköenergia muunnetaan lämmöksi vastuksissa, valon muodoksi lampuissa tai mekaaniseksi energiaksi moottoreissa. Energian säilymislain mukaan energia ei häviä vaan muuntuu muotoon toiseen. Tämä periaate on olennainen ymmärryksen kannalta, kuinka piirit toimivat."
-    },
-    {
-      "title": "35. Käytännön rakentaminen ja komponentit",
-      "image": "./images/35.png",
-      "text": "Käytännön sovelluksissa käytetään monenlaisia komponentteja, joita voidaan yhdistää luomaan monimutkaisia piireitä. Nämä komponentit voivat olla erillisiä komponentteja tai integroituja piirejä (IC). Komponenttien valinnan, sijoittelun ja kytkentöjen ymmärtäminen on tarpeen toimivien ja luotettavien piirien rakentamiseksi."
-    }
-  ]
+    "TITLE":  "Elektroniikan perusteet - Lukumateriaali",
+    "isReadingMaterial":  true,
+    "content":  [
+                    {
+                        "title":  "1. Johdanto",
+                        "text":  "Luku esittelee sähköpiirien perusperiaatteet ja elektronisten komponenttien toiminnan.",
+                        "image":  "./chap02/1.png"
+                    },
+                    {
+                        "title":  "2. Sähköpiirin peruskomponentit",
+                        "text":  "Kuvassa näkyy virtalähde, johdot ja vastus muodostavat suljetun piirin.",
+                        "image":  "./chap02/2.png"
+                    },
+                    {
+                        "title":  "3. Jännite ja virta",
+                        "text":  "Jännitteen ja virran määritelmät sekä niiden väliset suhteet esitetään symbolein.",
+                        "image":  "./chap02/3.png"
+                    },
+                    {
+                        "title":  "4. Ohmin laki",
+                        "text":  "Ohmin laki (V = I  R) on perusyhtälö sähkötekniikassa.",
+                        "image":  "./chap02/4.png"
+                    },
+                    {
+                        "title":  "5. Resistanssi",
+                        "text":  "Vastuksen resistanssin määritelmä ja sen merkinnät piirikaavioissa.",
+                        "image":  "./chap02/5.png"
+                    },
+                    {
+                        "title":  "6. Vastukset sarjassa",
+                        "text":  "Sarjaankytkennössä vastukset kytketään peräkkäin, kokonaisvastus on summa.",
+                        "image":  "./chap02/6.png"
+                    },
+                    {
+                        "title":  "7. Vastukset rinnan",
+                        "text":  "Rinnankytketyssä piirissä jännite on sama, virta jakautuu vastuksien kesken.",
+                        "image":  "./chap02/7.png"
+                    },
+                    {
+                        "title":  "8. Kirchhoffin lait",
+                        "text":  "Kirchhoffin virta- ja jännitelait kuvaavat piirin perusperiaatteita.",
+                        "image":  "./chap02/8.png"
+                    },
+                    {
+                        "title":  "9. Potentiaaliero",
+                        "text":  "Potentiaalieron mittaaminen piirin eri kohdissa.",
+                        "image":  "./chap02/9.png"
+                    },
+                    {
+                        "title":  "10. Energia ja teho",
+                        "text":  "Energian ja tehon määritelmät sekä laskeminen piireissä.",
+                        "image":  "./chap02/10.png"
+                    },
+                    {
+                        "title":  "11. Kondensaattori",
+                        "text":  "Kondensaattori varastoi energiaa sähkökenttään, kapasitanssi mitataan faradeissa.",
+                        "image":  "./chap02/11.png"
+                    },
+                    {
+                        "title":  "12. Kela",
+                        "text":  "Kela varastoi energiaa magneettikenttään, induktanssi mitataan henry-yksikössä.",
+                        "image":  "./chap02/12.png"
+                    },
+                    {
+                        "title":  "13. Diodi",
+                        "text":  "Diodi sallii virran kulun yhteen suuntaan, estetään käänteisvirta.",
+                        "image":  "./chap02/13.png"
+                    },
+                    {
+                        "title":  "14. Transistori",
+                        "text":  "Transistori toimii elektronisena kytkimenä tai vahvistimena.",
+                        "image":  "./chap02/14.png"
+                    },
+                    {
+                        "title":  "15. Operaatiovahvistin",
+                        "text":  "Operaatiovahvistin on monimuotoinen integroitu piiri moniin sovelluksiin.",
+                        "image":  "./chap02/15.png"
+                    },
+                    {
+                        "title":  "16. Vaihtovirta",
+                        "text":  "Vaihtovirta vaihtelee siniaaltokäyrän mukaisesti ajan funktiona.",
+                        "image":  "./chap02/16.png"
+                    },
+                    {
+                        "title":  "17. Taajuus ja jaksonaika",
+                        "text":  "Taajuus ja jaksonaika ovat toisiinsa käänteisesti verrannolliset.",
+                        "image":  "./chap02/17.png"
+                    },
+                    {
+                        "title":  "18. RLC-piiri",
+                        "text":  "RLC-piiri sisältää resistanssin, kelan ja kondensaattorin.",
+                        "image":  "./chap02/18.png"
+                    },
+                    {
+                        "title":  "19. Resonanssi",
+                        "text":  "Resonanssissa AC-piiri vastaa pienimmillä tai suurimmilla virroilla.",
+                        "image":  "./chap02/19.png"
+                    },
+                    {
+                        "title":  "20. Desibeeli",
+                        "text":  "Desibeeli on logaritminen mitta amplituden tai tehon muutokselle.",
+                        "image":  "./chap02/20.png"
+                    },
+                    {
+                        "title":  "21. Suodattimet",
+                        "text":  "Suodattimet päästävät tai estävät tietyt taajuudet.",
+                        "image":  "./chap02/21.png"
+                    },
+                    {
+                        "title":  "22. Muuntaja",
+                        "text":  "Muuntaja muuttaa vaihtojännitteen tasoa ilman suoraa yhteyttä.",
+                        "image":  "./chap02/22.png"
+                    },
+                    {
+                        "title":  "23. Yhteenveto",
+                        "text":  "Luvun päätteeksi tiivistetään keskeiset elektronikan perusperiaatteet.",
+                        "image":  "./chap02/23.png"
+                    }
+                ],
+    "ORDER":  1
 }
