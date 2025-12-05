@@ -7,18 +7,23 @@
                         "text":  "Luento käsittelee sähköpiirien perusteita. Useimmille opiskelijoille osa tästä on tuttua, ja luento toimii kertauksena.",
                         "image":  "./images/chap02/1.png"
                     },
+                                        {
+                        "title":  "2. Johdanto",
+                        "text":  "Luento käsittelee sähköpiirien perusteita. Useimmille opiskelijoille osa tästä on tuttua, ja luento toimii kertauksena.",
+                        "image":  "./images/chap02/2.png"
+                    },
                     {
-                        "title":  "2. SI-yksiköt",
+                        "title":  "3. SI-yksiköt",
                         "text":  "SI-järjestelmän perussuureet ja niiden yksiköt: kapasitanssi (F), virta (A), jännite (V), resistanssi (Ω), teho (W) jne.",
                         "image":  "./images/chap02/2.png"
                     },
                     {
-                        "title":  "3. Yleiset etuliitteet",
+                        "title":  "4. Yleiset etuliitteet",
                         "text":  "Yleiset SI-etuliitteet: tera (10), giga (10), mega (10), kilo (10), milli (10), mikro (10), nano (10), piko (10).",
                         "image":  "./images/chap02/3.png"
                     },
                     {
-                        "title":  "4. Sähköpiirit - Peruskäsitteet",
+                        "title":  "5. Sähköpiirit - Peruskäsitteet",
                         "text":  "Sähkövaraus on määrä sähköenergiaa, sähkövirta on varauksen liike. Konventionaalinen virta kulkee elektronien liikkeen vastakkaiseen suuntaan.",
                         "image":  "./images/chap02/4.png"
                     },

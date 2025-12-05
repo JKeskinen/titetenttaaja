@@ -56,16 +56,16 @@
     "order": 999
   },
   {
-    "id": "elektroniikan-perusteet-kertaus",
-    "title": "Elektroniikan perusteet - Lukumateriaali",
-    "file": "elektroniikan_perusteet_kertaus.json",
-    "category": "Muut",
-    "order": 1
-  },
-  {
     "id": "elektroniikan-perusteet",
     "title": "Basic Electric Circuits & Components – Chapter 2",
     "file": "elektroniikan_perusteet.json",
+    "category": "Muut",
+    "order": 999
+  },
+  {
+    "id": "elektroniikan-perusteet-kertaus",
+    "title": "Elektroniikan Perusteet Kertaus",
+    "file": "elektroniikan_perusteet_kertaus.json",
     "category": "Muut",
     "order": 999
   }

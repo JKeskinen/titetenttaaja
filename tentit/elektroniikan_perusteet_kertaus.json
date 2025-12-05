@@ -10,91 +10,91 @@
                     {
                         "title":  "2. SI-yksiköt",
                         "text":  "SI-järjestelmän perussuureet ja niiden yksiköt: kapasitanssi (F), virta (A), jännite (V), resistanssi (Ω), teho (W) jne.",
-                        "image":  "./images/chap02/2.png"
+                        "image":  "./images/chap02/3.png"
                     },
                     {
                         "title":  "3. Yleiset etuliitteet",
                         "text":  "Yleiset SI-etuliitteet: tera (10), giga (10), mega (10), kilo (10), milli (10), mikro (10), nano (10), piko (10).",
-                        "image":  "./images/chap02/3.png"
+                        "image":  "./images/chap02/4.png"
                     },
                     {
                         "title":  "4. Sähköpiirit - Peruskäsitteet",
                         "text":  "Sähkövaraus on määrä sähköenergiaa, sähkövirta on varauksen liike. Konventionaalinen virta kulkee elektronien liikkeen vastakkaiseen suuntaan.",
-                        "image":  "./images/chap02/4.png"
+                        "image":  "./images/chap02/5.png"
                     },
                     {
                         "title":  "5. Sähköpiirit - EMF ja potentiaali",
                         "text":  "Sähkömotorinen voima (e.m.f.) aiheuttaa virran. Akku tai generaattori tuo energiaa piiriin, jokaisessa pisteessä on sähköpotentiaali.",
-                        "image":  "./images/chap02/5.png"
+                        "image":  "./images/chap02/6.png"
                     },
                     {
                         "title":  "6. Yksinkertainen piiri",
-                        "text":  "Yksinkertaisen piirin rakenne virtalähteellä, johtimilla ja kuormalla. Vesi-analogia auttaa ymmärtämään virran kulkua.",
-                        "image":  "./images/chap02/6.png"
+                        "text":  "Peruspiiri: Yksinkertainen lamppu toimii kuormana (piirin osa, jossa virran kulku vaatii työtä). Kun lamppu liitetään pariston napoihin, virta kulkee positiivisesta navasta negatiiviseen. Tämän prosessin aikana virta saa lampun hehkulangan loistamaan ja valoa syntyy. Muista, että termi virta tarkoittaa konventionaalista virtaa  elektronit kulkevat todellisuudessa vastakkaiseen suuntaan.",
+                        "image":  "./images/chap02/7.png"
                     },
                     {
                         "title":  "7. Jännitteet piirissä",
                         "text":  "Jännitteet mitataan suhteessa referenssipisteeseen, yleensä maahan (0V). Eri pisteiden väliset potentiaalit määritetään tähän vertailutasoon nähden.",
-                        "image":  "./images/chap02/7.png"
+                        "image":  "./images/chap02/8.png"
                     },
                     {
                         "title":  "8. Jännitteiden merkinnät",
                         "text":  "Jännitteiden esittäminen piirroskaavioissa nuolimerkinnöillä ja konventioilla. Merkinnät suhteessa maahan.",
-                        "image":  "./images/chap02/8.png"
+                        "image":  "./images/chap02/9.png"
                     },
                     {
                         "title":  "9. Tasavirta ja vaihtovirta",
                         "text":  "Virta voi olla vakio (DC) tai vaihteleva (AC). Tasavirtassa virta kulkee yhteen suuntaan, vaihtovirtassa suunta vaihtuu jaksollisesti.",
-                        "image":  "./images/chap02/9.png"
+                        "image":  "./images/chap02/10.png"
                     },
                     {
                         "title":  "10. Vastukset, kondensaattorit, kelat",
                         "text":  "Perustava komponentit: vastus vastustaa virtaa (Ω), kondensaattori varastoi energiaa sähkökenttään (F), kela magneettikenttään (H).",
-                        "image":  "./images/chap02/10.png"
-                    },
-                    {
-                        "title":  "11. Ohmin laki",
-                        "text":  "Ohmin laki: V = IR, I = V/R, R = V/I. Perussuhde jännitteen, virran ja resistanssin välillä.",
                         "image":  "./images/chap02/11.png"
                     },
                     {
-                        "title":  "12. Kirchhoffin virta-laki",
-                        "text":  "Solmussa tulevan virran summa = lähtevän virran summa. Esimerkiksi: I1  I2  I3 = 0.",
+                        "title":  "11. Ohmin laki",
+                        "text":  "Ohmin laki: Vastukset rajoittavat virtaa ja asettavat jännitetasoja piirissä. R = resistanssi (Ω), P = teho (W), V/U = jännite (V), I = virta (A). Johtavuus (S) on resistanssin käänteisarvo.",
                         "image":  "./images/chap02/12.png"
                     },
                     {
-                        "title":  "13. Kirchhoffin jännitelaki",
-                        "text":  "Suljetun silmukan jännitteiden summa = 0. Esimerkiksi: E  V1  V2 = 0.",
+                        "title":  "12. Kirchhoffin virta-laki",
+                        "text":  "Kirchhoffin virtalaki: Solmuun tulevat virrat ovat positiivisia, lähtevät negatiivisia. Kolme virtaa I1, I2, I3 tulevat solmuun, kaksi virtaa I4, I5 lähtevät solmusta. Yhtälö: I1 + I2 + I3 - I4 - I5 = 0",
                         "image":  "./images/chap02/13.png"
                     },
                     {
-                        "title":  "14. Tehon häviö vastuksessa",
-                        "text":  "Vastuksessa hävitettävä teho: P = VI = IR = V/R. Tämä energia muuntuu lämmöksi.",
+                        "title":  "13. Kirchhoffin jännitelaki",
+                        "text":  "Suljetun silmukan jännitteiden summa = 0. Esimerkiksi: E - V1 - V2 = 0.",
                         "image":  "./images/chap02/14.png"
                     },
                     {
-                        "title":  "15. Vastukset sarjassa",
-                        "text":  "Sarjaankytkennyssä kokonaishankitus on yksittäisten resistanssien summa: R_tot = R + R + R.",
+                        "title":  "14. Tehon häviö vastuksessa",
+                        "text":  "Vastuksessa hävitettävä teho: P = VI = IR = V/R. (P = UI = IR = U/R) Tämä energia muuntuu lämmöksi.",
                         "image":  "./images/chap02/15.png"
                     },
                     {
+                        "title":  "15. Vastukset sarjassa",
+                        "text":  "Sarjapiiri: Lamput kytketään peräkkäin. Virta on sama kaikissa sarjaan kytketyissä kuormissa. Jännite laskee jokaisen lampun kohdalla. Jokainen lamppu on himmeämpi kuin peruspiirissä. Kokonaisresistanssi on kolme kertaa yhden lampun resistanssi.",
+                        "image":  "./images/chap02/16.png"
+                    },
+                    {
                         "title":  "16. Vastukset rinnakkain",
-                        "text":  "Rinnakkaiskytkennyssä käytetään kaavaa: 1/R_tot = 1/R + 1/R + 1/R. Kokonaishankitus on pienempi kuin pienin yksittäinen resistanssi.",
+                        "text":  "Rinnakkaispiiri: Kuormaelementit kytketään rinnakkain, jännite on sama jokaisessa haarassa. Virta jakautuu tasan kolmeen haaraan. Lamput eivät himmeä, mutta paristosta kulkee kolme kertaa enemmän virtaa, joten se tyhjenee kolme kertaa nopeammin. Kokonaisresistanssi on kolmasosa yhden lampun resistanssista.",
                         "image":  "./images/chap02/16.png"
                     },
                     {
                         "title":  "17. Jännitejakaja - teoria",
-                        "text":  "Jännitejakajapiiri kahden vastuksen välillä. Kaava määrittää kuinka jännite jakautuu vastuksien suhteessa.",
+                        "text":  "Sarjan ja rinnakkaisen yhdistelmä: Piirissä on sekä sarja- että rinnakkaiskytkentöjä. Tämä aiheuttaa sekä jännitteen alenemista että virran jakautumista. Kokonaisresistanssi on puolitoista kertaa yhden resistiivisen elementin resistanssi.",
                         "image":  "./images/chap02/17.png"
                     },
                     {
                         "title":  "18. Jännitejakaja - esimerkki 1",
-                        "text":  "Laskuesimerkki jännitejaolle kahdella vastuksella ja annetulla kokonaisjännitteellä.",
+                        "text":  "Ohmin lain esimerkki: Käytännön laskuesimerkki jännitteen, virran ja vastuksen suhteesta.",
                         "image":  "./images/chap02/18.png"
                     },
                     {
                         "title":  "19. Jännitejakaja - esimerkki 2",
-                        "text":  "Toinen laskuesimerkki jännitejaolle eri resistanssiarvoilla.",
+                        "text":  "Vastusvärikoodin esimerkki: Värikoodit kertovat resistanssin arvon ja toleranssin.",
                         "image":  "./images/chap02/19.png"
                     },
                     {
@@ -116,6 +116,51 @@
                         "title":  "23. Keskeiset kohdat",
                         "text":  "Yksikönmuistutukset: ymmärrä virta ja jännite, Ohmin ja Kirchhoffin lait ovat olennaisia, jännitejakajat aiheuttavat usein ongelmia.",
                         "image":  "./images/chap02/23.png"
+                    },
+                    {
+                        "title":  "24. Peruspiiri",
+                        "text":  "Yksinkertainen lamppu toimii kuormana (piirin osa, jossa virran kulku vaatii työtä). Kun lamppu liitetään pariston napoihin, virta kulkee positiivisesta navasta negatiiviseen. Tämän prosessin aikana virta saa lampun hehkulangan loistamaan ja valoa syntyy. Muista, että termi virta tarkoittaa konventionaalista virtaa – elektronit kulkevat todellisuudessa vastakkaiseen suuntaan.",
+                        "image":  "./images/chap02/BASIC.png"
+                    },
+                    {
+                        "title":  "25. Sarjapiiri",
+                        "text":  "Kun kuormaelementit (lamput) kytketään peräkkäin, muodostuu sarjapiiri. Virta on sama kaikissa sarjaan kytketyissä kuormissa. Jännite laskee kolmanneksen jokaisen lampun kohdalla (kaikki lamput ovat samanlaisia). Käytettäessä samaa paristoa kuin peruspiirissä, jokainen lamppu on kolmanneksen kirkkaampi kuin lamppu peruspiirissä. Kokonaisresistanssi on kolme kertaa yhden lampun resistanssi.",
+                        "image":  "./images/chap02/SERIES.png"
+                    },
+                    {
+                        "title":  "26. Rinnakkaispiiri",
+                        "text":  "Rinnakkaispiiri sisältää kuormaelementtejä, joiden liitännät on tehty niin, että jännite on sama jokaisessa haarassa. Jos kaikilla lampulla on sama resistanssi, paristosta tuleva virta jakautuu tasan kolmeen haaraan. Lamput eivät himmene, mutta paristosta kulkee kolme kertaa enemmän virtaa, joten se tyhjenee nopeammin. Kokonaisresistanssi on kolmasosa yhden lampun resistanssista.",
+                        "image":  "./images/chap02/PARALLEL.png"
+                    },
+                    {
+                        "title":  "27. Sarjan ja rinnakkaisen yhdistelmä",
+                        "text":  "Piiri, jossa kuormaelementtejä on sijoitettu sekä sarjaan että rinnakkain, aiheuttaa sekä jännitteen alenemista että virran jakautumista. Tämän yhdistelmän kokonaisresistanssi on puolitoista kertaa yhden resistiivisen elementin resistanssi.",
+                        "image":  "./images/chap02/COMBINATION.png"
+                    },
+                    {
+                        "title":  "28. Kirchhoffin virtalaki - Solmu",
+                        "text":  "Kolme virtaa, jotka tulevat solmuun, I1, I2, I3, ovat positiivisia arvoltaan ja kaksi virtaa, jotka lähtevät solmusta, I4 ja I5, ovat negatiivisia arvoltaan. Yhtälö: I1 + I2 + I3 - I4 - I5 = 0",
+                        "image":  "./images/chap02/KNOT.png"
+                    },
+                    {
+                        "title":  "29. Ohmin laki - Vastus",
+                        "text":  "Vastukset ovat laitteita, joita käytetään piireissä rajoittamaan virran kulkua tai asettamaan jännitetasoja piirin sisällä. R on resistanssi (Ω), P on tehonhäviö (W), V/U on jännite (V), I on virta (A). Johtavuus (S) on resistanssin käänteisarvo.",
+                        "image":  "./images/chap02/OHM.png"
+                    },
+                    {
+                        "title":  "30. Rinnakkaispiiri",
+                        "text":  "Rinnakkaispiiri sisältää kuormaelementtejä, joiden liitännät on tehty niin, että jännite on sama jokaisessa haarassa. Jos kaikilla lampulla on sama resistanssi, paristosta tuleva virta jakautuu tasan kolmeen haaraan. Lamput eivät himmene, mutta paristosta kulkee kolme kertaa enemmän virtaa, joten se tyhjenee nopeammin. Kokonaisresistanssi on kolmasosa yhden lampun resistanssista.",
+                        "image":  "./images/chap02/PARALLEL.png"
+                    },
+                    {
+                        "title":  "31. Ohmin lain esimerkki",
+                        "text":  "Käytännön laskuesimerkki, jossa lasketaan jännitteen, virran ja vastuksen suhdetta konkreettisella esimerkillä.",
+                        "image":  "./images/chap02/ohmExample.png"
+                    },
+                    {
+                        "title":  "32. Vastusvärikoodi",
+                        "text":  "Vastusvärikoodit kertovat resistanssin arvon ja toleranssin. Värien järjestys määrää numeerisen arvon ja viimeinen väri toleranssin.",
+                        "image":  "./images/chap02/RESCOLOR.png"
                     }
                 ],
     "ORDER":  1

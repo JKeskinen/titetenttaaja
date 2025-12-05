@@ -2,7 +2,7 @@
   "TITLE": "Basic Electric Circuits & Components – Chapter 2",
   "questions": [
     {
-      "question": "Mikä on sähkövirta?",
+      "question": "Mitä sähkövirta tarkoittaa?",
       "material_quote": "Electric current – a flow of electrical charge, often a flow of electrons",
       "options": [
         "Sähkövarauksen virtausta",
@@ -13,29 +13,29 @@
       "correct": "Sähkövarauksen virtausta"
     },
     {
-      "question": "Mitä tapahtuu virran suunnalle tasavirrassa (DC)?",
+      "question": "Miten tasavirta (DC) käyttäytyy?",
       "material_quote": "When the current flowing in a conductor always flows in the same direction this is direct current (DC)",
       "options": [
-        "Se virtaa aina samaan suuntaan",
-        "Se vaihtaa suuntaa jatkuvasti",
-        "Se nousee ja laskee sinimuotoisesti",
-        "Se on satunnaista ja impulssimaista"
+        "Virta kulkee aina samaan suuntaan",
+        "Virta vaihtaa suuntaa jatkuvasti",
+        "Virta nousee ja laskee sinimuotoisesti",
+        "Virta on satunnaista ja impulssimaista"
       ],
-      "correct": "Se virtaa aina samaan suuntaan"
+      "correct": "Virta kulkee aina samaan suuntaan"
     },
     {
-      "question": "Mitä tapahtuu virran suunnalle vaihtovirrassa (AC)?",
+      "question": "Miten vaihtovirta (AC) käyttäytyy?",
       "material_quote": "When the direction of the current periodically changes this is alternating current (AC)",
       "options": [
-        "Se vaihtaa suuntaa jaksollisesti",
-        "Se ei koskaan vaihda suuntaa",
-        "Se virtaa vain positiiviseen suuntaan",
-        "Se toimii ilman sähköjännitettä"
+        "Virta vaihtaa suuntaa jaksollisesti",
+        "Virta ei koskaan vaihda suuntaa",
+        "Virta kulkee vain yhteen suuntaan",
+        "Virta toimii ilman sähköjännitettä"
       ],
-      "correct": "Se vaihtaa suuntaa jaksollisesti"
+      "correct": "Virta vaihtaa suuntaa jaksollisesti"
     },
     {
-      "question": "Mitä resistori tekee?",
+      "question": "Mikä on vastuksen tehtävä sähköpiirissä?",
       "material_quote": "Resistors provide resistance – they oppose the flow of electricity",
       "options": [
         "Vastustaa sähkövirran kulkua",
@@ -52,7 +52,7 @@
         "Varastoi energiaa sähkökenttään",
         "Varastoi energiaa magneettikenttään",
         "Vastustaa sähkövirran kulkua",
-        "Muuntaa AC:n DC:ksi"
+        "Muuntaa vaihtovirran tasavirraksi"
       ],
       "correct": "Varastoi energiaa sähkökenttään"
     },
@@ -68,7 +68,7 @@
       "correct": "Varastoi energiaa magneettikenttään"
     },
     {
-      "question": "Mitä vaaditaan virran ylläpitämiseksi piirissä?",
+      "question": "Mitä tarvitaan, jotta virta kulkee piirissä jatkuvasti?",
       "material_quote": "a sustained current needs a complete circuit",
       "options": [
         "Suljettu virtapiiri",
@@ -79,7 +79,7 @@
       "correct": "Suljettu virtapiiri"
     },
     {
-      "question": "Mikä aiheuttaa virran kulun piirissä?",
+      "question": "Mikä saa virran kulkemaan sähköpiirissä?",
       "material_quote": "the stimulus that causes a current to flow is an e.m.f.",
       "options": [
         "Sähkömotorinen voima (EMF)",
