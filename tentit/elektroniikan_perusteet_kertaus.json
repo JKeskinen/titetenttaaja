@@ -5,117 +5,117 @@
                     {
                         "title":  "1. Johdanto",
                         "text":  "Luku esittelee sähköpiirien perusperiaatteet ja elektronisten komponenttien toiminnan.",
-                        "image":  "./chap02/1.png"
+                        "image":  "./images/chap02/1.png"
                     },
                     {
                         "title":  "2. Sähköpiirin peruskomponentit",
                         "text":  "Kuvassa näkyy virtalähde, johdot ja vastus muodostavat suljetun piirin.",
-                        "image":  "./chap02/2.png"
+                        "image":  "./images/chap02/2.png"
                     },
                     {
                         "title":  "3. Jännite ja virta",
                         "text":  "Jännitteen ja virran määritelmät sekä niiden väliset suhteet esitetään symbolein.",
-                        "image":  "./chap02/3.png"
+                        "image":  "./images/chap02/3.png"
                     },
                     {
                         "title":  "4. Ohmin laki",
                         "text":  "Ohmin laki (V = I  R) on perusyhtälö sähkötekniikassa.",
-                        "image":  "./chap02/4.png"
+                        "image":  "./images/chap02/4.png"
                     },
                     {
                         "title":  "5. Resistanssi",
                         "text":  "Vastuksen resistanssin määritelmä ja sen merkinnät piirikaavioissa.",
-                        "image":  "./chap02/5.png"
+                        "image":  "./images/chap02/5.png"
                     },
                     {
                         "title":  "6. Vastukset sarjassa",
                         "text":  "Sarjaankytkennössä vastukset kytketään peräkkäin, kokonaisvastus on summa.",
-                        "image":  "./chap02/6.png"
+                        "image":  "./images/chap02/6.png"
                     },
                     {
                         "title":  "7. Vastukset rinnan",
                         "text":  "Rinnankytketyssä piirissä jännite on sama, virta jakautuu vastuksien kesken.",
-                        "image":  "./chap02/7.png"
+                        "image":  "./images/chap02/7.png"
                     },
                     {
                         "title":  "8. Kirchhoffin lait",
                         "text":  "Kirchhoffin virta- ja jännitelait kuvaavat piirin perusperiaatteita.",
-                        "image":  "./chap02/8.png"
+                        "image":  "./images/chap02/8.png"
                     },
                     {
                         "title":  "9. Potentiaaliero",
                         "text":  "Potentiaalieron mittaaminen piirin eri kohdissa.",
-                        "image":  "./chap02/9.png"
+                        "image":  "./images/chap02/9.png"
                     },
                     {
                         "title":  "10. Energia ja teho",
                         "text":  "Energian ja tehon määritelmät sekä laskeminen piireissä.",
-                        "image":  "./chap02/10.png"
+                        "image":  "./images/chap02/10.png"
                     },
                     {
                         "title":  "11. Kondensaattori",
                         "text":  "Kondensaattori varastoi energiaa sähkökenttään, kapasitanssi mitataan faradeissa.",
-                        "image":  "./chap02/11.png"
+                        "image":  "./images/chap02/11.png"
                     },
                     {
                         "title":  "12. Kela",
                         "text":  "Kela varastoi energiaa magneettikenttään, induktanssi mitataan henry-yksikössä.",
-                        "image":  "./chap02/12.png"
+                        "image":  "./images/chap02/12.png"
                     },
                     {
                         "title":  "13. Diodi",
                         "text":  "Diodi sallii virran kulun yhteen suuntaan, estetään käänteisvirta.",
-                        "image":  "./chap02/13.png"
+                        "image":  "./images/chap02/13.png"
                     },
                     {
                         "title":  "14. Transistori",
                         "text":  "Transistori toimii elektronisena kytkimenä tai vahvistimena.",
-                        "image":  "./chap02/14.png"
+                        "image":  "./images/chap02/14.png"
                     },
                     {
                         "title":  "15. Operaatiovahvistin",
                         "text":  "Operaatiovahvistin on monimuotoinen integroitu piiri moniin sovelluksiin.",
-                        "image":  "./chap02/15.png"
+                        "image":  "./images/chap02/15.png"
                     },
                     {
                         "title":  "16. Vaihtovirta",
                         "text":  "Vaihtovirta vaihtelee siniaaltokäyrän mukaisesti ajan funktiona.",
-                        "image":  "./chap02/16.png"
+                        "image":  "./images/chap02/16.png"
                     },
                     {
                         "title":  "17. Taajuus ja jaksonaika",
                         "text":  "Taajuus ja jaksonaika ovat toisiinsa käänteisesti verrannolliset.",
-                        "image":  "./chap02/17.png"
+                        "image":  "./images/chap02/17.png"
                     },
                     {
                         "title":  "18. RLC-piiri",
                         "text":  "RLC-piiri sisältää resistanssin, kelan ja kondensaattorin.",
-                        "image":  "./chap02/18.png"
+                        "image":  "./images/chap02/18.png"
                     },
                     {
                         "title":  "19. Resonanssi",
                         "text":  "Resonanssissa AC-piiri vastaa pienimmillä tai suurimmilla virroilla.",
-                        "image":  "./chap02/19.png"
+                        "image":  "./images/chap02/19.png"
                     },
                     {
                         "title":  "20. Desibeli",
                         "text":  "Desibeli on logaritminen mitta amplituden tai tehon muutokselle.",
-                        "image":  "./chap02/20.png"
+                        "image":  "./images/chap02/20.png"
                     },
                     {
                         "title":  "21. Suodattimet",
                         "text":  "Suodattimet päästävät tai estävät tietyt taajuudet.",
-                        "image":  "./chap02/21.png"
+                        "image":  "./images/chap02/21.png"
                     },
                     {
                         "title":  "22. Muuntaja",
                         "text":  "Muuntaja muuttaa vaihtojännitteen tasoa ilman suoraa yhteyttä.",
-                        "image":  "./chap02/22.png"
+                        "image":  "./images/chap02/22.png"
                     },
                     {
                         "title":  "23. Yhteenveto",
                         "text":  "Luvun päätteeksi tiivistetään keskeiset elektronikan perusperiaatteet.",
-                        "image":  "./chap02/23.png"
+                        "image":  "./images/chap02/23.png"
                     }
                 ],
     "ORDER":  1
