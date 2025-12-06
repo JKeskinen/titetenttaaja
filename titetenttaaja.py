@@ -9,7 +9,7 @@ YELLOW = "\033[93m"
 RESET = "\033[0m"
 
 
-TENTTIKANSIO = "tentit"
+TENTTIKANSIO = "TENTIT"
 
 try:
     from rich.align import Align

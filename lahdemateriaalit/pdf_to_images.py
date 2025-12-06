@@ -27,13 +27,14 @@ def find_poppler_path():
 
 POPPLER_PATH = find_poppler_path()
 
-def pdf_to_images(pdf_path: str, start_number: int = 1, output_root: Path | None = None, subfolder: str | None = None):
+def pdf_to_images(pdf_path: str, start_number: int = 1, subfolder: str | None = None):
     """
     Muuntaa PDF:n PNG-kuviksi.
     
     Args:
-        pdf_path: Polku PDF-tiedostoon
+        pdf_path: Polku PDF-tiedostoon (suhteessa nykyiseen hakemistoon)
         start_number: Ensimmäisen kuvan numero (oletus: 1)
+        subfolder: Alikansio tentit/images/-hakemiston alla
     """
     pdf_file = Path(pdf_path)
     
@@ -63,9 +64,12 @@ def pdf_to_images(pdf_path: str, start_number: int = 1, output_root: Path | None
         print("   macOS: brew install poppler")
         return
     
-    # Tallennetaan kuvat
-    root = output_root or Path(__file__).parent
-    output_dir = root / subfolder if subfolder else root
+    # Tallennetaan kuvat TENTIT/images/-kansioon
+    # Skripti on LAHDEMATERIAALIT-kansiossa, joten mennään ../TENTIT/images/
+    project_root = Path(__file__).parent.parent  # Ylös LAHDEMATERIAALIT -> titetenttaaja
+    images_base = project_root / "TENTIT" / "images"
+    
+    output_dir = images_base / subfolder if subfolder else images_base
     output_dir.mkdir(parents=True, exist_ok=True)
     
     for i, image in enumerate(images):
@@ -85,10 +89,13 @@ if __name__ == "__main__":
         print("⚠️ Poppler-asennusta ei löytynyt automaattisesti!")
         print("Asenna Poppler komennolla: winget install oschwartz10612.Poppler\n")
     
-    # Näytä nykyinen sijainti
+    # Näytä nykyinen sijainti ja tallennuskansio
     current_dir = Path(__file__).parent
+    project_root = current_dir.parent
+    images_dir = project_root / "TENTIT" / "images"
+    
     print(f"📂 Nykyinen hakemisto: {current_dir}")
-    print(f"💾 Kuvat tallennetaan: {current_dir}/<kansion_nimi>/\n")
+    print(f"💾 Kuvat tallennetaan: {images_dir}/<kansion_nimi>/\n")
     
     # PDF-tiedoston nimi
     pdf_path = input("PDF-tiedoston nimi (esim. Chap02.pdf): ").strip()
@@ -109,10 +116,11 @@ if __name__ == "__main__":
     default_folder = pdf_stem.lower().replace(" ", "_")
     subfolder_str = input(f"Kansion nimi kuvien tallennukseen (oletus: {default_folder}): ").strip() or default_folder
     
-    # Tallennetaan aina nykyiseen images-hakemistoon
-    output_root = Path(__file__).parent
+    # Lasketaan tallennuspolku
+    images_base = project_root / "tentit" / "images"
+    output_path = images_base / subfolder_str
     
-    print(f"\n📁 Tallennetaan: {output_root / subfolder_str}/")
+    print(f"\n📁 Tallennetaan: {output_path}/")
     print(f"🔢 Numeroidaan: {start_num}, {start_num+1}, {start_num+2}...\n")
     
-    pdf_to_images(pdf_path, start_num, output_root=output_root, subfolder=subfolder_str)
+    pdf_to_images(pdf_path, start_num, subfolder=subfolder_str)
