@@ -5,6 +5,7 @@ TiTeTenttaaja on monivalintatentti-harjoittelualusta, josta löytyy kolme käytt
 ## Sisällysluettelo
 
 - [Projektin rakenne](#projektin-rakenne)
+- [Tärkeimmät skriptit](#tärkeimmät-skriptit)
 - [Käyttöönotto](#käyttöönotto)
 - [Tenttikysymysten luominen](#tenttikysymysten-luominen)
 - [Kuvien lisääminen](#kuvien-lisääminen)
@@ -15,13 +16,27 @@ TiTeTenttaaja on monivalintatentti-harjoittelualusta, josta löytyy kolme käytt
 ## Projektin rakenne
 
 - `titetenttaaja.py` – komentoriviversio.
-- `WEB/` – selainkäyttöliittymä (HTML/CSS/JS). Synkronoidaan automaattisesti `tentit/`-kansiosta.
+- `WEB/` – selainkäyttöliittymä (HTML/CSS/JS). Synkronoidaan automaattisesti `TENTIT/`-kansiosta.
 - `tauri-app/` – Tauri-projekti desktop-sovellusta varten.
-- `tentit/` – varsinaiset tenttikysymykset (`*.json`), lukumateriaali ja `manifest.json`.
+  - `src/tentit/` – Tauri-sovelluksen omat tenttitiedostot (kopioidaan manuaalisesti `TENTIT/`-kansiosta)
+- `TENTIT/` – **pääkansio** kaikille tenttikysymyksille, lukumateriaalille ja `manifest.json`.
   - `images/` – kuvatiedostot kysymyksille ja materiaalille (PNG-muodossa).
   - `update_tentit.py` – synkronointiskripti, joka päivittää manifestin ja kopioi kaiken `WEB/tentit/`-kansioon.
-  - `images/pdf_to_images.py` – apuskripti PDF-tiedostojen muuntamiseen PNG-kuviksi.
-- `lahdemateriaalit/` – lähtömateriaalit (PDF-, Word- ja tekstitiedostot).
+- `LAHDEMATERIAALIT/` – lähtömaterialit (PDF-, Word- ja tekstitiedostot).
+  - `pdf_to_images.py` – apuskripti PDF-tiedostojen muuntamiseen PNG-kuviksi.
+
+### Tärkeimmät skriptit
+
+| Skripti | Sijainti | Käyttö | Mitä tekee |
+|---------|----------|--------|------------|
+| `start_web.py` | juuri | `python start_web.py` | Käynnistää HTTP-palvelimen ja avaa selainversion `http://localhost:3000/WEB/index.html` |
+| `update_tentit.py` | `TENTIT/` | `python TENTIT/update_tentit.py` | Päivittää `manifest.json` ja synkronoi **kaikki** JSON-tiedostot + kuvat → `WEB/tentit/` |
+| `pdf_to_images.py` | `LAHDEMATERIAALIT/` | `cd LAHDEMATERIAALIT; python pdf_to_images.py` | Muuntaa PDF-tiedostot PNG-kuviksi ja tallentaa ne `TENTIT/images/`-kansioon |
+| `titetenttaaja.py` | juuri | `python titetenttaaja.py` | Käynnistää komentorivisovelluksen |
+
+💡 **Tärkeää:** 
+- `WEB/tentit/`-kansio päivittyy **automaattisesti** kun ajat `update_tentit.py`
+- `tauri-app/src/tentit/` täytyy päivittää **manuaalisesti** `xcopy`-komennolla (ks. [Desktop (Tauri)](#desktop-tauri))
 
 ## Käyttöönotto
 
@@ -46,14 +61,25 @@ TiTeTenttaaja on monivalintatentti-harjoittelualusta, josta löytyy kolme käytt
 
 ### Selainversio
 
-1. Käynnistä paikallinen palvelin projektin juuresta (esim. Pythonin sisäinen):
-   ```bash
-   python -m http.server
-   ```
-2. Avaa selain osoitteeseen `http://localhost:8000/WEB/`.
-3. Valitse tentti, rajaa halutessasi kysymysten määrä ja aloita testi.
+**Suosittu tapa (automatisoitu):**
+```bash
+python start_web.py
+```
 
-> Huom: selainversio lukee tentit polusta `../tentit/manifest.json`, joten se pitää ajaa palvelimen kautta juurihakemistosta.
+Tämä skripti:
+- Käynnistää HTTP-palvelimen portissa 3000
+- Avaa selaimeen automaattisesti osoitteeseen `http://localhost:3000/WEB/index.html`
+- Tulostaa terminaaliin: `🚀 Open page: http://localhost:3000/WEB/index.html`
+
+Palvelimen pysäyttäminen: `Ctrl+C`
+
+**Vaihtoehto (manuaalinen):**
+1. Käynnistä paikallinen palvelin projektin juuresta:
+   ```bash
+   python -m http.server 3000
+   ```
+2. Avaa selain osoitteeseen `http://localhost:3000/WEB/index.html`
+3. Valitse tentti, rajaa halutessasi kysymysten määrä ja aloita testi.
 
 ### Desktop (Tauri)
 
@@ -63,11 +89,17 @@ TiTeTenttaaja on monivalintatentti-harjoittelualusta, josta löytyy kolme käytt
    cd tauri-app
    npm install
    ```
-3. Kehitysmoodi:
+3. **Synkronoi tenttitiedostot** (ennen kehitys- tai buildausvaihetta):
+   ```bash
+   # Kopioi uusimmat tentit Tauri-sovellukseen
+   xcopy /E /I /Y ..\TENTIT\*.json src\tentit\
+   xcopy /E /I /Y ..\TENTIT\images src\tentit\images
+   ```
+4. Kehitysmoodi:
    ```bash
    npm run tauri dev
    ```
-4. Tuotantoversio:
+5. Tuotantoversio:
    ```bash
    npm run tauri build
    ```
@@ -150,14 +182,14 @@ Voit luoda myös lukumateriaalia kysymysten tueksi:
 
 ### 3. Tallenna ja synkronoi
 
-1. **Tallenna tiedosto** `tentit/`-hakemistoon (esim. `tentit/elektroniikan_perusteet.json`)
+1. **Tallenna tiedosto** `TENTIT/`-hakemistoon (esim. `TENTIT/elektroniikan_perusteet.json`)
 2. **Päivitä manifest.json ja synkronoi WEB-kansio**:
    ```bash
-   python tentit/update_tentit.py
+   python TENTIT/update_tentit.py
    ```
    
    Tämä skripti:
-   - Skannaa kaikki `tentit/*.json`-tiedostot ja lisää ne `manifest.json`-tiedostoon
+   - Skannaa kaikki `TENTIT/*.json`-tiedostot ja lisää ne `manifest.json`-tiedostoon
    - Kopioi automaattisesti kaikki JSON-tiedostot ja kuvat `WEB/tentit/`-kansioon
    
    💡 **Ei tarvitse kopioida tiedostoja manuaalisesti!** Skripti hoitaa kaiken synkronoinnin.
@@ -209,18 +241,19 @@ pip install pdf2image Pillow
 #### 3. Muunna PDF kuviksi
 
 **Valmistele PDF-tiedosto:**
-1. Kopioi PDF-tiedostosi `tentit/images/`-hakemistoon väliaikaisesti
-   - Esim: `tentit/images/Elektroniikka.pdf`
-   - PDF:t voi siirtää `lahdemateriaalit/`-kansioon muunnoksen jälkeen
+1. Kopioi PDF-tiedostosi `LAHDEMATERIAALIT/`-hakemistoon
+   - Esim: `LAHDEMATERIAALIT/Elektroniikka.pdf`
 
 **Aja muunnosskripti:**
 
 Skripti on interaktiivinen - se kysyy tarvittavat tiedot:
 
 ```bash
-cd tentit/images
+cd LAHDEMATERIAALIT
 python pdf_to_images.py
 ```
+
+**Skripti tallentaa kuvat automaattisesti** `TENTIT/images/<kansion_nimi>/`-hakemistoon.
 
 **Kysyttävät tiedot:**
 
@@ -241,11 +274,14 @@ python pdf_to_images.py
 ```
 === PDF -> PNG Muunnin ===
 
+📂 Nykyinen hakemisto: LAHDEMATERIAALIT
+💾 Kuvat tallennetaan: TENTIT/images/<kansion_nimi>/
+
 PDF-tiedoston nimi (esim. Chap02.pdf): Elektroniikka.pdf
 Anna kuville aloitusnumero (oletus: 1): 1
 Kansion nimi kuvien tallennukseen (oletus: elektroniikka): 
 
-📁 Tallennetaan: tentit/images/elektroniikka/
+📁 Tallennetaan: TENTIT/images/elektroniikka/
 🔢 Numeroidaan: 1, 2, 3...
 
 📄 Käsitellään: Elektroniikka.pdf
@@ -253,10 +289,8 @@ Kansion nimi kuvien tallennukseen (oletus: elektroniikka):
 💾 Tallennettu: 1.png
 💾 Tallennettu: 2.png
 ...
-✨ Valmis! Luotiin kuvat 1-23 -> tentit/images/elektroniikka
+✨ Valmis! Luotiin kuvat 1-23 -> TENTIT/images/elektroniikka
 ```
-
-Skripti luo automaattisesti kansion ja tallentaa PNG-kuvat sinne muodossa `1.png`, `2.png`, `3.png` jne.
 
 #### 4. Viittaa kuviin kysymyksissä
 
@@ -275,14 +309,14 @@ Kuvien polut ovat suhteellisia `tentit/`-hakemistoon nähden. Web-sovellus muunt
 
 Selain- ja desktop-versiot käyttävät samaa manifestia. Uuden tentin lisääminen:
 
-1. Lisää uusi kysymystiedosto `tentit/`-hakemistoon (esim. `ohjelmistosuunnittelu.json`).
+1. Lisää uusi kysymystiedosto `TENTIT/`-hakemistoon (esim. `TENTIT/ohjelmistosuunnittelu.json`).
 2. Synkronoi kaikki komennolla:
    ```bash
-   python tentit/update_tentit.py
+   python TENTIT/update_tentit.py
    ```
    
    **Skripti tekee automaattisesti:**
-   - Päivittää `manifest.json`-tiedoston (lisää kaikki `tentit/*.json`-tiedostot)
+   - Päivittää `manifest.json`-tiedoston (lisää kaikki `TENTIT/*.json`-tiedostot)
    - Kopioi kaikki JSON-tiedostot → `WEB/tentit/`
    - Kopioi koko `images/`-kansion → `WEB/tentit/images/`
    - Järjestää tentit kategorioittain (`Fysiikka`, `Ohjelmointi`, `Tietotekniikka`, `Ohjelmistosuunnittelu`, `Muut`)
