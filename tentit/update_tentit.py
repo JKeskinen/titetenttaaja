@@ -24,7 +24,7 @@ from typing import Any, Dict, Iterable, List
 TITLE_KEYS: tuple[str, ...] = ("TITLE", "title", "name", "otsikko", "nimi", "subject")
 MANIFEST_FILENAME = "manifest.json"
 
-CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Ohjelmistosuunnittelu", "Muut"]
+CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Ohjelmistosuunnittelu", "Sähkötekniikka", "Muut"]
 CATEGORY_PRIORITY = {name: index for index, name in enumerate(CATEGORY_ORDER)}
 
 SMALL_WORDS = {"ja", "sekä", "tai", "vai"}
@@ -89,6 +89,8 @@ def infer_category_from_filename(filename: str) -> str:
         return "Tietotekniikka"
     if "ohjelmistosuunnittelu" in name or "software" in name:
         return "Ohjelmistosuunnittelu"
+    if "elektroni" in name or "sähkötekniikka" in name or "sähkö" in name:
+        return "Sähkötekniikka"
     return "Muut"
 
 

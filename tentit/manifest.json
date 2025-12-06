@@ -59,14 +59,14 @@
     "id": "elektroniikan-perusteet",
     "title": "Elektroniikan Perusteet - Testaa tietosi",
     "file": "elektroniikan_perusteet.json",
-    "category": "Muut",
+    "category": "Sähkötekniikka",
     "order": 999
   },
   {
     "id": "elektroniikan-perusteet-kertaus",
     "title": "Elektroniikan Perusteet Kertaus",
     "file": "elektroniikan_perusteet_kertaus.json",
-    "category": "Muut",
+    "category": "Sähkötekniikka",
     "order": 999
   }
 ]
