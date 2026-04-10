@@ -24,7 +24,7 @@ from typing import Any, Dict, Iterable, List
 TITLE_KEYS: tuple[str, ...] = ("TITLE", "title", "name", "otsikko", "nimi", "subject")
 MANIFEST_FILENAME = "manifest.json"
 
-CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Tietotekniikka", "Ohjelmistosuunnittelu", "Sähkötekniikka", "Muut"]
+CATEGORY_ORDER = ["Fysiikka", "Ohjelmointi", "Verkko-ohjelmointi", "Tietotekniikka", "Ohjelmistosuunnittelu", "Sähkötekniikka", "Muut"]
 CATEGORY_PRIORITY = {name: index for index, name in enumerate(CATEGORY_ORDER)}
 
 SMALL_WORDS = {"ja", "sekä", "tai", "vai"}
@@ -81,6 +81,8 @@ def extract_title(data: Any, fallback: str) -> str:
 def infer_category_from_filename(filename: str) -> str:
     """Päättelee kategorian tiedostonimen perusteella."""
     name = filename.lower()
+    if "verkko" in name and "ohjelmointi" in name:
+        return "Verkko-ohjelmointi"
     if "ohjelmointi" in name or "koodi" in name:
         return "Ohjelmointi"
     if "fysiikka" in name:

@@ -42,6 +42,20 @@
     "order": 5
   },
   {
+    "id": "verkko-ohjelmointi-kertaus",
+    "title": "Verkko-ohjelmointi – Lukumateriaali",
+    "file": "verkko-ohjelmointi_kertaus.json",
+    "category": "Verkko-ohjelmointi",
+    "order": 1
+  },
+  {
+    "id": "verkko-ohjelmointi",
+    "title": "Verkko-ohjelmointi",
+    "file": "verkko-ohjelmointi.json",
+    "category": "Verkko-ohjelmointi",
+    "order": 2
+  },
+  {
     "id": "tietoliikenne",
     "title": "Tietoliikenne",
     "file": "tietoliikenne.json",

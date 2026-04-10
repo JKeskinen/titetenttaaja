@@ -1,0 +1,466 @@
+{
+  "TITLE": "Verkko-ohjelmointi",
+  "ORDER": 2,
+  "questions": [
+    {
+      "question": "Mitä verkko-ohjelmoinnilla tarkoitetaan?",
+      "options": [
+        "Paikallisten työpöytäsovellusten kehittämistä",
+        "Ohjelmien rakentamista, jotka eivät käytä verkkoa",
+        "Ohjelmien ja järjestelmien toteuttamista, jotka kommunikoivat verkossa",
+        "Pelkästään selainkäyttöliittymien suunnittelua"
+      ],
+      "correct": "Ohjelmien ja järjestelmien toteuttamista, jotka kommunikoivat verkossa"
+    },
+    {
+      "question": "Mikä seuraavista kuuluu verkko-ohjelmoinnin sisältöön?",
+      "options": [
+        "Kääntäjien optimointi",
+        "HTTP ja REST",
+        "Grafiikkakiihdyttimet",
+        "Sulautettujen laitteiden piirisuunnittelu"
+      ],
+      "correct": "HTTP ja REST"
+    },
+    {
+      "question": "Mitä asiakas–palvelin-malli kuvaa?",
+      "options": [
+        "Kaksi samanarvoista ohjelmaa ilman rooleja",
+        "Useita palvelimia ilman asiakkaita",
+        "Pyyntö–vastaus-mallia asiakkaan ja palvelimen välillä",
+        "Pelkkää tietokannan sisäistä rakennetta"
+      ],
+      "correct": "Pyyntö–vastaus-mallia asiakkaan ja palvelimen välillä"
+    },
+    {
+      "question": "Mikä on MVC-arkkitehtuurin Model-osan tehtävä?",
+      "options": [
+        "Käyttöliittymän näyttäminen",
+        "HTTP-pyyntöjen reititys",
+        "Tietomallin ja datan käsittely",
+        "Asiakkaan tunnistaminen"
+      ],
+      "correct": "Tietomallin ja datan käsittely"
+    },
+    {
+      "question": "Mikä kuuluu View-kerroksen vastuulle MVC-mallissa?",
+      "options": [
+        "Tietokantayhteydet",
+        "Sovelluslogiikan suorittaminen",
+        "Käyttöliittymän esittäminen",
+        "Säikeiden hallinta"
+      ],
+      "correct": "Käyttöliittymän esittäminen"
+    },
+    {
+      "question": "Mitä Controller tekee MVC-arkkitehtuurissa?",
+      "options": [
+        "Tallentaa datan tietokantaan suoraan",
+        "Toimii käyttöliittymänä käyttäjälle",
+        "Sisältää sovelluksen logiikan",
+        "Korvaa web-palvelimen"
+      ],
+      "correct": "Sisältää sovelluksen logiikan"
+    },
+    {
+      "question": "Mitä tarkoitetaan monitasoarkkitehtuurilla?",
+      "options": [
+        "Vain kolmen kerroksen käyttöä",
+        "Arkkitehtuuria ilman logiikkakerrosta",
+        "Arkkitehtuuria, jossa kerroksia voi olla useampia kuin kolme",
+        "Pelkästään selainpohjaista rakennetta"
+      ],
+      "correct": "Arkkitehtuuria, jossa kerroksia voi olla useampia kuin kolme"
+    },
+    {
+      "question": "Mikä ei kuulu viisitason arkkitehtuuriin?",
+      "options": [
+        "Presentation",
+        "Business logic",
+        "Kernel mode",
+        "Data storage"
+      ],
+      "correct": "Kernel mode"
+    },
+    {
+      "question": "Mitä synkroninen ohjelmointi tarkoittaa?",
+      "options": [
+        "Tehtävien suorittamista satunnaisessa järjestyksessä",
+        "Useiden tehtävien suorittamista samanaikaisesti",
+        "Tehtävien suorittamista peräkkäin",
+        "Tehtävien suorittamista ilman odottamista"
+      ],
+      "correct": "Tehtävien suorittamista peräkkäin"
+    },
+    {
+      "question": "Mitä asynkronisuus mahdollistaa?",
+      "options": [
+        "Vain yhden tehtävän suorittamisen",
+        "Rinnakkaisen suorittamisen",
+        "Ainoastaan tietokannan käsittelyn",
+        "Synkronisten virheiden estämisen"
+      ],
+      "correct": "Rinnakkaisen suorittamisen"
+    },
+    {
+      "question": "Miksi asynkroninen suoritus vaatii viestintää?",
+      "options": [
+        "Koska HTTP vaatii sitä",
+        "Koska valmistumista ei jäädä odottamaan",
+        "Koska säikeitä ei voi käyttää",
+        "Koska funktiot eivät palauta arvoja"
+      ],
+      "correct": "Koska valmistumista ei jäädä odottamaan"
+    },
+    {
+      "question": "Mikä on callback-funktion tarkoitus?",
+      "options": [
+        "Käynnistää ohjelma uudelleen",
+        "Välittää tietoa palvelimelle",
+        "Ilmoittaa asynkronisen suorituksen valmistumisesta",
+        "Lopettaa säie"
+      ],
+      "correct": "Ilmoittaa asynkronisen suorituksen valmistumisesta"
+    },
+    {
+      "question": "Missä käytetään usein asynkronisuutta?",
+      "options": [
+        "Komentorivityökaluissa",
+        "Grafiikkakiihdyttimissä",
+        "Graafisissa ja selainkäyttöliittymissä",
+        "Kääntäjissä"
+      ],
+      "correct": "Graafisissa ja selainkäyttöliittymissä"
+    },
+    {
+      "question": "Mitä AJAX tarkoittaa?",
+      "options": [
+        "Advanced Java XML",
+        "Asynchronous JavaScript and XML",
+        "Automated JSON Access",
+        "Asynchronous Java Execution"
+      ],
+      "correct": "Asynchronous JavaScript and XML"
+    },
+    {
+      "question": "Mikä AJAXin nimi-osa on nykyään harhaanjohtava?",
+      "options": [
+        "JavaScript",
+        "Asynchronous",
+        "XML",
+        "AJ"
+      ],
+      "correct": "XML"
+    },
+    {
+      "question": "Mitä objektia AJAX käyttää perinteisesti?",
+      "options": [
+        "FetchObject",
+        "XMLHttpRequest",
+        "HttpClient",
+        "Socket"
+      ],
+      "correct": "XMLHttpRequest"
+    },
+    {
+      "question": "Mikä on Fetch API:n etu XMLHttpRequestiin verrattuna?",
+      "options": [
+        "Se on hitaampi",
+        "Se on syntaksiltaan yksinkertaisempi",
+        "Se ei tue asynkronisuutta",
+        "Se toimii vain palvelimella"
+      ],
+      "correct": "Se on syntaksiltaan yksinkertaisempi"
+    },
+    {
+      "question": "Mihin HTTP perustuu?",
+      "options": [
+        "Tiedostojen synkronointiin",
+        "Asiakas–palvelin-viestintään",
+        "Paikalliseen prosessiviestintään",
+        "Graafiseen renderöintiin"
+      ],
+      "correct": "Asiakas–palvelin-viestintään"
+    },
+    {
+      "question": "Mikä osa HTTP-pyynnöstä kertoo pyynnön tyypin?",
+      "options": [
+        "Header",
+        "Method",
+        "Body",
+        "Status code"
+      ],
+      "correct": "Method"
+    },
+    {
+      "question": "Mikä HTTP-metodi käytetään yleensä datan hakemiseen?",
+      "options": [
+        "POST",
+        "DELETE",
+        "PUT",
+        "GET"
+      ],
+      "correct": "GET"
+    },
+    {
+      "question": "Mitä HTTP-statuskoodi ilmaisee vastauksessa?",
+      "options": [
+        "Käytetyn porttinumeron",
+        "Onnistuiko pyyntö vai ei",
+        "Asiakkaan IP-osoitteen",
+        "Välimuistin koon"
+      ],
+      "correct": "Onnistuiko pyyntö vai ei"
+    },
+    {
+      "question": "Mikä ei ole tyypillinen HTTP-vastausosa?",
+      "options": [
+        "Status code",
+        "Headers",
+        "Body",
+        "Callback"
+      ],
+      "correct": "Callback"
+    },
+    {
+      "question": "Mikä on POST-metodin keskeinen ominaisuus?",
+      "options": [
+        "Data näkyy URL:ssa",
+        "Data kulkee rungossa",
+        "Pyynnöt tallentuvat välimuistiin",
+        "Pyynnöistä voi tehdä kirjanmerkin"
+      ],
+      "correct": "Data kulkee rungossa"
+    },
+    {
+      "question": "Mikä HTTP-pyyntö voidaan tallentaa selainhistoriaan?",
+      "options": [
+        "POST",
+        "PUT",
+        "DELETE",
+        "GET"
+      ],
+      "correct": "GET"
+    },
+    {
+      "question": "Mitä API tarkoittaa?",
+      "options": [
+        "Automated Program Interface",
+        "Application Programming Interface",
+        "Advanced Protocol Identifier",
+        "Application Process Instance"
+      ],
+      "correct": "Application Programming Interface"
+    },
+    {
+      "question": "Mikä on API:n keskeinen osa?",
+      "options": [
+        "Lähdekoodi",
+        "Dokumentaatio",
+        "Käyttöliittymä",
+        "Tietokanta"
+      ],
+      "correct": "Dokumentaatio"
+    },
+    {
+      "question": "Mitä web service tarkoittaa W3C:n mukaan?",
+      "options": [
+        "Selainpohjaista käyttöliittymää",
+        "Tietokoneiden välistä vuorovaikutusta verkon yli",
+        "Paikallista kirjastoa",
+        "Staattista HTML-sivua"
+      ],
+      "correct": "Tietokoneiden välistä vuorovaikutusta verkon yli"
+    },
+    {
+      "question": "Mikä teknologia ei liity SOAP-pohjaisiin web serviceihin?",
+      "options": [
+        "SOAP",
+        "WSDL",
+        "UDDI",
+        "Fetch API"
+      ],
+      "correct": "Fetch API"
+    },
+    {
+      "question": "Mitä REST on?",
+      "options": [
+        "Protokolla",
+        "Ohjelmointikieli",
+        "Arkkitehtuurimalli",
+        "Tietomuoto"
+      ],
+      "correct": "Arkkitehtuurimalli"
+    },
+    {
+      "question": "Kuinka monta REST-periaatetta on määritelty?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct": "6"
+    },
+    {
+      "question": "Mikä REST-periaatteista on valinnainen?",
+      "options": [
+        "Stateless",
+        "Uniform interface",
+        "Code on demand",
+        "Client-server"
+      ],
+      "correct": "Code on demand"
+    },
+    {
+      "question": "Mikä HTTP-metodi vastaa CRUD-toimintoa Create?",
+      "options": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "correct": "POST"
+    },
+    {
+      "question": "Mikä HTTP-metodi vastaa CRUD-toimintoa Read?",
+      "options": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "correct": "GET"
+    },
+    {
+      "question": "Mitä endpoint tarkoittaa RESTissä?",
+      "options": [
+        "Tietokantataulua",
+        "Palvelun lähdekoodia",
+        "Palvelun kutsuosoitetta",
+        "HTTP-statuskoodia"
+      ],
+      "correct": "Palvelun kutsuosoitetta"
+    },
+    {
+      "question": "Mihin API-avainta käytetään?",
+      "options": [
+        "Tietokannan avaamiseen",
+        "Käyttöliittymän päivittämiseen",
+        "Käyttäjän tai sovelluksen tunnistamiseen",
+        "Porttinumeron vaihtamiseen"
+      ],
+      "correct": "Käyttäjän tai sovelluksen tunnistamiseen"
+    },
+    {
+      "question": "Mikä väite API-avaimista on totta?",
+      "options": [
+        "Ne ovat aina ilmaisia",
+        "Niitä ei voi perua",
+        "Ne saadaan usein rekisteröitymällä",
+        "Ne eivät liity REST-rajapintoihin"
+      ],
+      "correct": "Ne saadaan usein rekisteröitymällä"
+    },
+    {
+      "question": "Mitä rinnakkaisuus tarkoittaa ohjelmoinnissa?",
+      "options": [
+        "Ohjelman pysäyttämistä",
+        "Useiden tehtävien suorittamista yhtä aikaa",
+        "Vain yhden säikeen käyttöä",
+        "Synkronista suorittamista"
+      ],
+      "correct": "Useiden tehtävien suorittamista yhtä aikaa"
+    },
+    {
+      "question": "Mihin säikeitä käytetään tyypillisesti?",
+      "options": [
+        "Nopeisiin laskutoimituksiin",
+        "Hitaisiin I/O-operaatioihin",
+        "Kääntämiseen",
+        "Käyttöliittymän piirtämiseen"
+      ],
+      "correct": "Hitaisiin I/O-operaatioihin"
+    },
+    {
+      "question": "Mikä Python-moduuli tarjoaa säikeitä?",
+      "options": [
+        "asyncio",
+        "multiprocessing",
+        "threading",
+        "socket"
+      ],
+      "correct": "threading"
+    },
+    {
+      "question": "Millä metodilla Pythonin säie käynnistetään?",
+      "options": [
+        "run",
+        "start",
+        "execute",
+        "join"
+      ],
+      "correct": "start"
+    },
+    {
+      "question": "Mitä join-metodi tekee säikeelle?",
+      "options": [
+        "Käynnistää sen",
+        "Lopettaa sen",
+        "Odottaa sen valmistumista",
+        "Kopioi sen"
+      ],
+      "correct": "Odottaa sen valmistumista"
+    },
+    {
+      "question": "Mikä on socket?",
+      "options": [
+        "Tietokantataulu",
+        "Prosessikohtainen osoite tiedonsiirtoon",
+        "HTTP-metodi",
+        "Säikeen nimi"
+      ],
+      "correct": "Prosessikohtainen osoite tiedonsiirtoon"
+    },
+    {
+      "question": "Mikä muodostaa Internet socket -osoitteen?",
+      "options": [
+        "MAC-osoite ja käyttäjänimi",
+        "Protokolla, IP-osoite ja portti",
+        "HTTP-metodi ja URL",
+        "Selain ja palvelin"
+      ],
+      "correct": "Protokolla, IP-osoite ja portti"
+    },
+    {
+      "question": "Mikä on WebSocketin keskeinen ominaisuus?",
+      "options": [
+        "Yksisuuntainen viestintä",
+        "Kaksisuuntainen viestintä",
+        "Vain tiedostonsiirto",
+        "Pelkkä REST-käyttö"
+      ],
+      "correct": "Kaksisuuntainen viestintä"
+    },
+    {
+      "question": "Miten WebSocket-yhteys syntyy?",
+      "options": [
+        "Aina erillisellä protokollalla",
+        "HTTP-yhteyttä ei voi käyttää",
+        "HTTP-yhteys voidaan päivittää WebSocketiksi",
+        "Ainoastaan FTP:n kautta"
+      ],
+      "correct": "HTTP-yhteys voidaan päivittää WebSocketiksi"
+    },
+    {
+      "question": "Mikä kirjasto käyttää WebSocketteja, jos mahdollista?",
+      "options": [
+        "Flask",
+        "Django",
+        "Socket.IO",
+        "Requests"
+      ],
+      "correct": "Socket.IO"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+    "TITLE":  "Verkko-ohjelmointi – Lukumateriaali",
+    "isReadingMaterial":  true,
+    "content":  [
+                    {
+                        "title":  "1. Johdanto",
+                        "text":  "Verkko-ohjelmointi tarkoittaa ohjelmien ja järjestelmien toteuttamista siten, että ne kommunikoivat verkon kautta. Tyypillinen toimintamalli on asiakas–palvelin-arkkitehtuuri, jossa asiakas tekee pyynnön ja palvelin palauttaa vastauksen. Verkko-ohjelmointi ei rajoitu vain selainpohjaisiin sovelluksiin, vaan sitä hyödynnetään myös teollisissa ja hajautetuissa järjestelmissä.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "2. Asiakas–palvelin-malli",
+                        "text":  "Asiakas–palvelin-mallissa vastuut on jaettu kahdelle osapuolelle. Asiakas pyytää palvelua ja palvelin tuottaa sen. Asiakas voi olla selain, mobiilisovellus tai toinen palvelin. Viestintä perustuu yleensä pyyntö–vastaus-malliin.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "3. Tasoarkkitehtuuri ja MVC",
+                        "text":  "Tasoarkkitehtuurissa sovellus jaetaan erillisiin kerroksiin. Yleinen toteutus on MVC-malli, jossa Model vastaa datasta, View käyttöliittymästä ja Controller sovelluslogiikasta. Tämä jako helpottaa sovelluksen ylläpitoa ja jatkokehitystä.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "4. Synkroninen ohjelmointi",
+                        "text":  "Synkroninen ohjelmointi tarkoittaa, että ohjelman suoritus etenee vaihe vaiheelta. Seuraava operaatio alkaa vasta, kun edellinen on suoritettu loppuun. Tämä on helppo ymmärtää, mutta voi aiheuttaa hitautta esimerkiksi verkkopyyntöjen yhteydessä.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "5. Asynkroninen ohjelmointi",
+                        "text":  "Asynkroninen ohjelmointi mahdollistaa useiden tehtävien suorittamisen rinnakkain. Ohjelma ei jää odottamaan hidasta operaatiota, vaan jatkaa suoritusta ja käsittelee tuloksen myöhemmin. Tämä parantaa sovelluksen suorituskykyä ja käyttäjäkokemusta.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "6. Asynkronisuus web-sovelluksissa",
+                        "text":  "Web-sovelluksissa asynkronisuutta hyödynnetään etenkin palvelinkyselyissä. Selain voi hakea dataa taustalla ilman, että koko sivu tarvitsee ladata uudelleen. Näin sovelluksesta saadaan nopeampi ja käyttäjäystävällisempi.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "7. AJAX ja Fetch API",
+                        "text":  "AJAX on perinteinen tapa tehdä asynkronisia HTTP-pyyntöjä selaimessa XMLHTTPRequest-olion avulla. Uudempi Fetch API tarjoaa saman toiminnallisuuden selkeämmällä syntaksilla ja hyödyntää async/await-rakenteita.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "8. HTTP-protokolla",
+                        "text":  "HTTP on web-sovellusten perusprotokolla. Sen avulla asiakas ja palvelin kommunikoivat pyyntöjen ja vastausten kautta. HTTP on tilaton, eli jokainen pyyntö käsitellään erillisenä.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "9. HTTP-pyynnöt ja vastaukset",
+                        "text":  "HTTP-pyyntö sisältää metodin, resurssin polun, otsakkeet ja mahdollisen rungon. HTTP-vastaus sisältää tilakoodin, joka kertoo pyynnön onnistumisesta, sekä mahdollisen vastauksen datan.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "10. REST-arkkitehtuuri",
+                        "text":  "REST on arkkitehtuurimalli web servicejen toteuttamiseen HTTP-protokollan avulla. Se perustuu periaatteisiin kuten tilattomuus, yhtenäinen rajapinta ja resurssien käsittely HTTP-metodeilla.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "11. REST ja CRUD",
+                        "text":  "REST-rajapinnoissa resurssien käsittely noudattaa usein CRUD-mallia. Tietojen luominen, lukeminen, päivittäminen ja poistaminen toteutetaan HTTP-metodeilla POST, GET, PUT ja DELETE.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "12. Säikeet ja rinnakkaisuus",
+                        "text":  "Rinnakkaisuutta voidaan toteuttaa säikeiden avulla. Säikeet mahdollistavat useiden tehtävien ajamisen samanaikaisesti saman prosessin sisällä. Tämä on hyödyllistä erityisesti hitaissa I/O-operaatioissa.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "13. Socket-ohjelmointi",
+                        "text":  "Socket-ohjelmointi mahdollistaa suorien verkkoyhteyksien luomisen kahden prosessin välille. Socket määritellään protokollan, IP-osoitteen ja porttinumeron avulla.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "14. WebSocket",
+                        "text":  "WebSocket-tekniikka mahdollistaa pysyvän ja kaksisuuntaisen yhteyden asiakkaan ja palvelimen välillä. Tämä soveltuu hyvin reaaliaikaisiin sovelluksiin, kuten chatteihin ja live-päivityksiin.",
+                        "image":  null
+                    },
+                    {
+                        "title":  "15. Etämetodikutsut",
+                        "text":  "Etämetodikutsuissa ohjelma kutsuu funktiota, joka suoritetaan toisessa järjestelmässä. Kutsu näyttää paikalliselta, mutta sen taustalla tapahtuu verkon yli kulkeva viestintä.",
+                        "image":  null
+                    }
+                ],
+    "ORDER":  1
+}
