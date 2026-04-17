@@ -50,14 +50,14 @@
   },
   {
     "id": "verkko-ohjelmointi",
-    "title": "Verkko-ohjelmointi",
+    "title": "Verkko-ohjelmointi Pak1",
     "file": "verkko-ohjelmointi.json",
     "category": "Verkko-ohjelmointi",
     "order": 2
   },
   {
     "id": "verkko-ohjelmointi-p2",
-    "title": "Verkko-ohjelmointi",
+    "title": "Verkko-ohjelmointi Pak2",
     "file": "verkko-ohjelmointi_p2.json",
     "category": "Verkko-ohjelmointi",
     "order": 2
