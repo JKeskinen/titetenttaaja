@@ -56,6 +56,13 @@
     "order": 2
   },
   {
+    "id": "verkko-ohjelmointi-p2",
+    "title": "Verkko-ohjelmointi",
+    "file": "verkko-ohjelmointi_p2.json",
+    "category": "Verkko-ohjelmointi",
+    "order": 2
+  },
+  {
     "id": "tietoliikenne",
     "title": "Tietoliikenne",
     "file": "tietoliikenne.json",

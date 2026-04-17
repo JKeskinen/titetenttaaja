@@ -1,0 +1,358 @@
+{
+	"TITLE": "Verkko-ohjelmointi",
+	"ORDER": 2,
+	"questions": [
+		{
+			"type": "true_false",
+			"question": "MVC on yleinen nimitys mille tahansa kolmitasoarkkitehtuurille.",
+			"options": [
+				"Totta",
+				"Tarua"
+			],
+			"correct": "Tarua",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.2 Mikä seuraavista on oikein?",
+			"options": [
+				"Asiakas–palvelinmallissa asiakas on aina selain",
+				"Kolmitasoarkkitehtuurissa tasoja voi olla useampi kuin kolme",
+				"MVC on yksi versio kolmitasoarkkitehtuurista",
+				"Viisitasoarkkitehtuurissa ei ole datakerrosta"
+			],
+			"correct": "MVC on yksi versio kolmitasoarkkitehtuurista",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.3 Mikä seuraavista väitteistä pitää paikkansa?",
+			"options": [
+				"Asiakas–palvelinmallissa verkko on aina internet",
+				"Käyttöliittymälogiikka kuuluu aina samaan tasoon kuin datavarasto",
+				"Asiakas–palvelinmallia käytetään vain websovelluksissa",
+				"Asiakas–palvelinmallissa asiakas ja palvelin kommunikoivat pyyntö–vastausperiaatteella"
+			],
+			"correct": "Asiakas–palvelinmallissa asiakas ja palvelin kommunikoivat pyyntö–vastausperiaatteella",
+			"multiCorrect": false
+		},
+		{
+			"type": "true_false",
+			"question": "Synkroninen ohjelmointi mahdollistaa useiden tehtävien suorittamisen samanaikaisesti.",
+			"options": [
+				"Totta",
+				"Tarua"
+			],
+			"correct": "Tarua",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.2 Mikä seuraavista on oikein?",
+			"options": [
+				"Asynkronisessa ohjelmoinnissa seuraavaa käskyä ei suoriteta ennen edellisen valmistumista",
+				"Asynkronisuus tarkoittaa aina monisäikeisyyttä",
+				"JavaScriptin setTimeout on esimerkki asynkronisesta toiminnosta",
+				"Asynkronisuutta ei voida käyttää asiakas–palvelinmallissa"
+			],
+			"correct": "JavaScriptin setTimeout on esimerkki asynkronisesta toiminnosta",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.3 Mikä seuraavista väitteistä pitää paikkansa?",
+			"options": [
+				"Asynkronisten funktioiden lopussa käytetään aina returnlausetta",
+				"Asynkronisessa ohjelmoinnissa tuloksia ei tarvitse välittää kutsuvalle koodille",
+				"Asynkronisten pyyntöjen avulla verkkosivua ei tarvitse ladata uudelleen",
+				"Fetch API toimii vain XML-muotoisen datan kanssa"
+			],
+			"correct": "Asynkronisten pyyntöjen avulla verkkosivua ei tarvitse ladata uudelleen",
+			"multiCorrect": false
+		},
+		{
+			"type": "true_false",
+			"question": "AJAX-tekniikassa käytettävä XML-nimi tarkoittaa, että data siirretään aina XML-muodossa.",
+			"options": [
+				"Totta",
+				"Tarua"
+			],
+			"correct": "Tarua",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.2 Mikä seuraavista on oikein?",
+			"options": [
+				"AJAX-pyynnöt edellyttävät aina koko sivun uudelleen lataamista",
+				"XMLHttpRequest on selainobjekti, jolla voidaan tehdä asynkronisia pyyntöjä",
+				"Fetch API ei tue asynkronista toimintaa",
+				"DOM ei liity AJAX-tekniikkaan"
+			],
+			"correct": "XMLHttpRequest on selainobjekti, jolla voidaan tehdä asynkronisia pyyntöjä",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.3 Mikä seuraavista väitteistä pitää paikkansa?",
+			"options": [
+				"AJAXin avulla voidaan ainoastaan lukea dataa palvelimelta",
+				"Fetch API perustuu callback-funktioihin ilman async/await-rakennetta",
+				"AJAX mahdollistaa tapahtumaohjatun sivun päivittämisen ilman uudelleenlatausta",
+				"XMLHttpRequest on Fetch APIa uudempi tekniikka"
+			],
+			"correct": "AJAX mahdollistaa tapahtumaohjatun sivun päivittämisen ilman uudelleenlatausta",
+			"multiCorrect": false
+		},
+		{
+			"type": "true_false",
+			"question": "GET-pyynnön mukana lähetettävä data näkyy selaimen osoiterivillä.",
+			"options": [
+				"Totta",
+				"Tarua"
+			],
+			"correct": "Totta",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.2 Mikä seuraavista on oikein?",
+			"options": [
+				"POST-pyynnöt tallennetaan selaimen välimuistiin",
+				"GET-pyynnöistä ei voi tehdä kirjanmerkkejä",
+				"POST-pyynnön data välitetään pyynnön rungossa",
+				"GET-pyynnön datan määrä ei ole rajoitettu"
+			],
+			"correct": "POST-pyynnön data välitetään pyynnön rungossa",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "2.3 Mikä seuraavista väitteistä pitää paikkansa?",
+			"options": [
+				"POST-pyyntöjä käytetään vain datan hakemiseen",
+				"GET-pyynnöt eivät jää selainhistoriaan",
+				"POST-pyynnön data voi sisältää myös binaaridataa",
+				"GET-pyyntöjen mukana voidaan lähettää rajattomasti dataa"
+			],
+			"correct": "POST-pyynnön data voi sisältää myös binaaridataa",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.1 Mikä seuraavista kuvaa parhaiten APIa?",
+			"options": [
+				"Graafinen käyttöliittymä",
+				"Ohjelmointirajapinta ohjelmistojen väliseen kommunikointiin",
+				"Selainpohjainen verkkosovellus",
+				"HTTP-protokollan vaihtoehto"
+			],
+			"correct": "Ohjelmointirajapinta ohjelmistojen väliseen kommunikointiin",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.2 Mikä seuraavista väitteistä web serviceen liittyen on oikein?",
+			"options": [
+				"Web service toimii vain selaimessa",
+				"Web service ei voi hyödyntää HTTP-protokollaa",
+				"Web service tarjoaa palvelun ohjelmallisesti käytettäväksi",
+				"Web service on sama asia kuin REST"
+			],
+			"correct": "Web service tarjoaa palvelun ohjelmallisesti käytettäväksi",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.3 Mikä seuraavista EI ole RESTin periaate?",
+			"options": [
+				"Tilattomuus",
+				"Asiakas–palvelinmalli",
+				"XML-viestintä",
+				"Yhtenäinen rajapinta"
+			],
+			"correct": "XML-viestintä",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.4 Mikä seuraavista väitteistä RESTistä on oikein?",
+			"options": [
+				"REST määrittelee viestien tarkan rakenteen",
+				"REST on standardoitu protokolla",
+				"REST on arkkitehtuurimalli",
+				"REST vaatii aina SOAPin käyttöä"
+			],
+			"correct": "REST on arkkitehtuurimalli",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.5 Mikä HTTP-metodi vastaa CRUD-periaatteessa resurssin lukemista?",
+			"options": [
+				"POST",
+				"PUT",
+				"GET",
+				"DELETE"
+			],
+			"correct": "GET",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.6 Mikä seuraavista endpointin ominaisuuksista on oikein?",
+			"options": [
+				"Endpoint on aina suoritettava ohjelma",
+				"Endpoint on tietty URI tai osoite",
+				"Endpoint toimii vain selaimessa",
+				"Endpoint ei liity HTTP-metodeihin"
+			],
+			"correct": "Endpoint on tietty URI tai osoite",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.7 Mikä seuraavista kuvaa API-avainta oikein?",
+			"options": [
+				"Sitä käytetään HTTP-protokollan versioksi",
+				"Se tunnistaa palvelun tarjoajan",
+				"Se tunnistaa palvelun käyttäjän",
+				"Se korvaa endpointin osoitteen"
+			],
+			"correct": "Se tunnistaa palvelun käyttäjän",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.1 Mikä seuraavista kuvaa parhaiten säiettä?",
+			"options": [
+				"Itsenäinen ohjelma",
+				"Käynnissä oleva käyttöjärjestelmä",
+				"Kevyt suoritusyksikkö prosessin sisällä",
+				"Verkkoyhteys palvelimelle"
+			],
+			"correct": "Kevyt suoritusyksikkö prosessin sisällä",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.2 Mikä seuraavista on säikeiden tyypillinen käyttökohde?",
+			"options": [
+				"Yksinkertaiset laskutoimitukset",
+				"Odottavat I/O-operaatiot",
+				"Käyttöliittymän piirtäminen ilman tapahtumia",
+				"Staattisten muuttujien määrittely"
+			],
+			"correct": "Odottavat I/O-operaatiot",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.3 Mikä seuraavista väitteistä on oikein?",
+			"options": [
+				"Säikeet ovat sama asia kuin prosessit",
+				"Rinnakkaisuus tarkoittaa aina asynkronisia funktioita",
+				"Säikeet mahdollistavat usean tehtävän ajamisen yhtä aikaa",
+				"Säikeitä ei voi yhdistää toisiinsa"
+			],
+			"correct": "Säikeet mahdollistavat usean tehtävän ajamisen yhtä aikaa",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.4 Mikä Pythonin threading-moduuliin liittyvistä väitteistä on oikein?",
+			"options": [
+				"Thread-olio käynnistetään join-metodilla",
+				"Säie määritellään Thread-luokan konstruktorilla",
+				"Säikeet eivät tue rinnakkaista suoritusta",
+				"Thread-luokkaa ei voi käyttää I/O-operaatioihin"
+			],
+			"correct": "Säie määritellään Thread-luokan konstruktorilla",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.5 Mitä Thread-luokan start-metodi tekee?",
+			"options": [
+				"Luo uuden prosessin",
+				"Odottaa säikeen valmistumista",
+				"Käynnistää säikeen suorituksen",
+				"Lopettaa säikeen välittömästi"
+			],
+			"correct": "Käynnistää säikeen suorituksen",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.6 Mitä Thread-luokan join-metodilla tehdään?",
+			"options": [
+				"Käynnistetään uusi säie",
+				"Yhdistetään kaksi säiettä yhdeksi",
+				"Odotetaan säikeen suorituksen päättymistä",
+				"Annetaan säikeelle tehtävä"
+			],
+			"correct": "Odotetaan säikeen suorituksen päättymistä",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.1 Mikä kuvaa parhaiten etämetodikutsua?",
+			"options": [
+				"HTTP-metodin kutsu selaimesta",
+				"Funktiokutsu, joka suoritetaan toisessa osoiteavaruudessa",
+				"Tiedoston lataaminen palvelimelta",
+				"Käyttöliittymän tapahtumankäsittely"
+			],
+			"correct": "Funktiokutsu, joka suoritetaan toisessa osoiteavaruudessa",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.2 Mikä seuraavista on tyypillinen RPC:n käyttökohde?",
+			"options": [
+				"Blogikirjoituksen poistaminen",
+				"Tuotelistan hakeminen tietokannasta",
+				"Koneoppimismallin suorittaminen palvelimella",
+				"Staattisen sivun lataaminen selaimeen"
+			],
+			"correct": "Koneoppimismallin suorittaminen palvelimella",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.3 Mikä seuraavista väitteistä RPC:stä on oikein?",
+			"options": [
+				"RPC piilottaa etäyhteyden yksityiskohdat ohjelmoijalta",
+				"RPC perustuu aina REST-arkkitehtuuriin",
+				"RPC:itä ei voi käyttää hajautetussa laskennassa",
+				"RPC soveltuu vain selainkäyttöön"
+			],
+			"correct": "RPC piilottaa etäyhteyden yksityiskohdat ohjelmoijalta",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.4 Mikä seuraavista EI ole RPC-tekniikka?",
+			"options": [
+				"Java RMI",
+				"JSONRPC",
+				"SOAP",
+				"REST"
+			],
+			"correct": "REST",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "3.5 Milloin RPC on RESTiä sopivampi ratkaisu?",
+			"options": [
+				"Kun halutaan lukea yksittäinen resurssi",
+				"Kun halutaan tehdä CRUD-operaatioita",
+				"Kun halutaan käynnistää palvelimella raskas toiminto",
+				"Kun halutaan päivittää selainkäyttöliittymää"
+			],
+			"correct": "Kun halutaan käynnistää palvelimella raskas toiminto",
+			"multiCorrect": false
+		}
+	]
+}
