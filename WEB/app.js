@@ -224,12 +224,12 @@ function renderReadingMaterial() {
 
 function renderQuestion() {
   const q = state.quiz.questions[state.currentQuestionIndex];
-  
+
   // Näytä pääotsikko tentissa
   document.querySelector('.hero')?.classList.remove('hidden');
-  
+
   elements.progressLabel.textContent = `Kysymys ${state.currentQuestionIndex + 1}/${state.quiz.questions.length}`;
-  
+
   // Näytetään kysymys jos se on olemassa
   if (q.question) {
     elements.questionText.textContent = q.question;
@@ -237,18 +237,17 @@ function renderQuestion() {
   } else {
     elements.questionText.style.display = 'none';
   }
-  
+
   // Tarkistetaan onko kuvaa
   let existingImage = document.getElementById('question-image');
   if (existingImage) {
     existingImage.remove();
   }
-  
+
   if (q.image) {
     const img = document.createElement('img');
     img.id = 'question-image';
     img.className = 'question-image';
-    // Convert relative path ./images/X.png to tentit/images/X.png for correct resolution
     img.src = q.image.startsWith('./') ? `tentit/${q.image.substring(2)}` : q.image;
     img.alt = q.question || 'Kysymyskuva';
     img.onerror = () => {
@@ -257,14 +256,33 @@ function renderQuestion() {
     };
     elements.questionText.parentElement.insertBefore(img, elements.optionsList);
   }
-  
+
   elements.optionsList.innerHTML = "";
+
+  // Piilotetaan seuraava-painike kunnes tarvittava tila saavutettu
+  elements.nextButton.classList.add("hidden");
+  elements.nextButton.disabled = false;
+
   q.options.forEach((option) => {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.className = "option";
     btn.textContent = option;
-    btn.onclick = () => handleAnswer(btn, q);
+
+    if (q.multiCorrect) {
+      // Monivalinta (useita oikeita): valinta toggle-muodossa
+      btn.onclick = () => {
+        btn.classList.toggle('selected');
+        const anySelected = elements.optionsList.querySelectorAll('.option.selected').length > 0;
+        elements.nextButton.disabled = !anySelected;
+        elements.nextButton.classList.remove('hidden');
+        elements.nextButton.textContent = 'Vahvista';
+      };
+    } else {
+      // Yksi oikea vastaus: arvioidaan heti
+      btn.onclick = () => handleAnswer(btn, q);
+    }
+
     li.append(btn);
     elements.optionsList.append(li);
   });
@@ -294,7 +312,49 @@ function handleAnswer(button, question) {
   elements.nextButton.classList.remove("hidden");
 }
 
+function evaluateMulti(question) {
+  if (state.hasAnswered) return;
+  const selectedBtns = [...elements.optionsList.querySelectorAll('.option.selected')];
+  const selected = selectedBtns.map((b) => b.textContent);
+  const correctArr = Array.isArray(question.correct) ? question.correct : [question.correct];
+
+  // Normalize comparison by trimming strings
+  const selSet = new Set(selected.map(s => s.trim()));
+  const corrSet = new Set(correctArr.map(s => s.trim()));
+
+  // Mark all correct options and incorrect selections
+  [...elements.optionsList.querySelectorAll('.option')].forEach((btn) => {
+    const txt = btn.textContent.trim();
+    if (corrSet.has(txt)) btn.classList.add('correct');
+    if (selSet.has(txt) && !corrSet.has(txt)) btn.classList.add('incorrect');
+    btn.disabled = true;
+  });
+
+  // Determine if selection exactly matches correct set
+  const isExact = selSet.size === corrSet.size && [...selSet].every(v => corrSet.has(v));
+  if (isExact) state.score++;
+  else {
+    state.wrongAnswers.push({
+      question: question.question,
+      userAnswer: selected.join(', '),
+      correctAnswer: correctArr.join(', '),
+    });
+  }
+
+  elements.scoreLabel.textContent = `Pisteet: ${state.score}`;
+  state.hasAnswered = true;
+  elements.nextButton.textContent = 'Seuraava';
+  elements.nextButton.disabled = false;
+}
+
 elements.nextButton.addEventListener("click", () => {
+  const q = state.quiz.questions[state.currentQuestionIndex];
+  // Jos monivalinta ilman vielä vahvistusta, arvioidaan
+  if (q.multiCorrect && !state.hasAnswered) {
+    evaluateMulti(q);
+    return;
+  }
+
   state.hasAnswered = false;
   state.currentQuestionIndex++;
   if (state.currentQuestionIndex < state.quiz.questions.length) renderQuestion();

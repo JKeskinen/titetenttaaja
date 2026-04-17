@@ -353,6 +353,75 @@
 			],
 			"correct": "Kun halutaan käynnistää palvelimella raskas toiminto",
 			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "Mitkä seuraavista ovat REST-arkkitehtuurin periaatteita?",
+			"options": [
+				"Stateless (tilaton kommunikaatio)",
+				"Client–server -erottelu",
+				"Palvelinten välinen SOAP-viestinvälitys",
+				"Cacheable (välimuisti sallittu)"
+			],
+			"correct": [
+				"Stateless (tilaton kommunikaatio)",
+				"Client–server -erottelu",
+				"Cacheable (välimuisti sallittu)"
+			],
+			"multiCorrect": true
+		},
+		{
+			"type": "multiple_choice",
+			"question": "Mitkä seuraavista HTTP-menetelmistä ovat yleensä idempotentteja?",
+			"options": [
+				"GET",
+				"POST",
+				"PUT",
+				"PATCH"
+			],
+			"correct": [
+				"GET",
+				"PUT"
+			],
+			"multiCorrect": true
+		},
+		{
+			"type": "true_false",
+			"question": "WebSocket-yhteyden avaaminen alkaa tavallisella HTTP-pyynnöllä, jota seuraa protokollan päivitys (handshake).",
+			"options": [
+				"Totta",
+				"Tarua"
+			],
+			"correct": "Totta",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "Yhdistä termi MVC oikeaan kuvaukseen:",
+			"options": [
+				"Model - Käyttöliittymä, joka esittää tiedon käyttäjälle",
+				"View - Liiketoimintalogiikan ja tietorakenteiden erottava arkkitehtuurimalli",
+				"Controller - Ohjelmiston järjestävä arkkitehtuuri",
+				"Valitse sellainen vaihtoehto, jossa Model on oikein määritelty"
+			],
+			"correct": "Model - Liiketoimintalogiikan ja tietorakenteiden erottava arkkitehtuurimalli",
+			"multiCorrect": false
+		},
+		{
+			"type": "multiple_choice",
+			"question": "API:n ominaisuuksia (valitse useita oikein):",
+			"options": [
+				"Ohjelmointirajapinta ohjelmistojen väliseen kommunikointiin",
+				"Mahdollistaa erilaisten järjestelmien yhteentoimivuuden",
+				"Käytetään vain web-sovelluksissa",
+				"Helpottaa ohjelmistokehitystä abstraktoimalla monimutkaisia toimintoja"
+			],
+			"correct": [
+				"Ohjelmointirajapinta ohjelmistojen väliseen kommunikointiin",
+				"Mahdollistaa erilaisten järjestelmien yhteentoimivuuden",
+				"Helpottaa ohjelmistokehitystä abstraktoimalla monimutkaisia toimintoja"
+			],
+			"multiCorrect": true
 		}
 	]
 }

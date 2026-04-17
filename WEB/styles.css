@@ -228,6 +228,11 @@ button:disabled {
   border-color: #ef4444;
 }
 
+.option.selected {
+  box-shadow: inset 0 0 0 2px rgba(99,102,241,0.18);
+  background: rgba(99,102,241,0.08);
+}
+
 /* 6️⃣ TULOKSET JA VÄÄRIN MENNEET -----------------------------*/
 .results {
   display: none;
